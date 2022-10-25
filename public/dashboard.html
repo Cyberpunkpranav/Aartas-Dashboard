@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Aartas | Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../src/css/dashboard.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <!-- Navbar-->
+  <div class="navsection p-2 shadow-sm">
+
+    <div class="container-fluid ">
+      <div class="row align-items-center justify-content-evenly">
+        <!-- User card-->
+        <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-6">
+          <div class="col-md-12 col-12 user">
+            <p class="m-0 username text-decoration-none text-lg-start text-md-start text-center">UserName here</p>
+            <p class="m-0 userstatus text-decoration-none text-lg-start text-md-start text-center"><small
+                class="text-muted">Designation here</small></p>
+          </div>
+        </div>
+        <!-- User card-->
+        <!--menu-->
+        <div class="col-lg-6 col-xl-5 col-sm-auto col-md-auto p-2 m-0 menu order-1 order-xl-0 order-sm-0 order-md-0 order-sm-0">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-auto "><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                    <i class="fa fa-calendar-plus-o" style="color:#96351E;"></i>
+                    <p class="col-12 m-0">Today</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                    <i class="fa fa-list" style="color:#96351E;"></i>
+                    <p class="col-12 m-0">Appointments</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                    <i class="fa fa-wheelchair" style="color:#96351E;"></i>
+                    <p class="col-12 m-0">Patients</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                    <i class="fa fa-user-md" style="color:#96351E;"></i>
+                    <p class="col-12 m-0">Doctors</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                    <i class="fa fa-inr" style="color:#96351E;"></i>
+                    <p class="col-12 m-0">DSR</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-auto"><a href="#" class="text-decoration-none">
+                <div class="text-center"><a>
+                    <i class="fa fa-plus-square" style="color:#96351E;"></i>
+                    <p class="col-12 m-0">Pharmacy</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--menu-->
+
+        <!--Add Button catalog-->
+
+        <!--Add Button-->
+
+        <div class="col-lg-2 col-xl-2 col-md-2 col-6 col-sm-2 text-center position-relative">
+          <button class="btn col-12 addbtn">+Add</button>
+          <!--Add Button-->
+
+          <!--Add Button Options-->
+          <div class="col-lg-12 col-md-10 col-sm-12 text-center addoptions  position-absolute">
+            <input class="col-12 p-lg-2 border-2 border-bottom shadow-sm text-start patient" type="button"
+              value="Patient">
+            <input class="col-12 p-lg-2 text-start border-2 border-bottom appointment shadow-sm" type="button"
+              value="Appointment">
+            <input class="col-12 p-lg-2 doctorslot shadow-sm text-start" type="button" value="Doctor Slot">
+          </div>
+          <!--Add Button Options-->
+        </div>
+
+        <!--Add Button catalog-->
+        <!--Search-->
+
+        <div class="col-10 col-lg-2 col-xl-2 col-md-3 col-sm-2 search">
+          <form class="d-flex position-relative ">
+            <input class="form-control col-auto" type="search" placeholder="Search" aria-label="Search">
+            <button class=" searchbtn rounded btn-sm m-0 position-absolute" type="submit"><i class="fa fa-search"
+                aria-hidden="true"></i></button>
+          </form>
+        </div>
+        <!--Search-->
+      </div>
+    </div>
+  </div>
+  <!-- Navbar-->
+
+  <!--Userin-->
+  <div class="container-fluid">
+    <section class="doctorsection ">
+      <div class="row shadow-sm">
+
+        <div class="scroll col-11 doctortab ">
+        </div>
+        <div class=" col-1 p-0 m-0 align-items-center">
+          <button class="btn">
+            <i class="fa fa-plus-circle" aria-hidden="true" style="color:#96351E;"></i>
+          </button>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-12 patientinfosection border-start border-top border-2 position-absolute">
+       
+            <h5 class="text-center mt-2 position-relative">Patient Details</h5>
+            <button type="button" class="btn-close closebtn position-absolute" aria-label="Close" onclick="closeform()"></button>
+          <hr>
+          <form class="col-12">
+            <div class="form-group col-10 text-center m-auto py-3">
+              <label for="inputEmail4" class="mb-2">Primary Phone Number</label>
+              <input type="number" max="10" min="10" class="form-control m-auto" id="inputEmail4"
+                placeholder="Phone Number" required>
+              <label for="inputEmail4" class="pt-3 mb-2">Enter Name</label>
+              <input type="text" maxlength="50" class="form-control m-auto" placeholder="Enter FirstName and LastName" required>
+            </div>
+            <hr>
+            <div class="col-10 text-center m-auto form-group">
+              <p class="m-0 mb-2">Gender</p>
+              <div class="d-flex">
+                <input class="col-4 text-center genderbtn" type="button" value="Male"></input>
+                <input class="col-4 text-center genderbtn" type="button" value="Female"></input>
+                <input class="col-4 text-center genderbtn" type="button" value="Others"></input>
+              </div>
+            </div>
+            <hr>
+            <div class="col-10 m-auto text-center">
+              <label for="date" class="mb-2">Enter Birth Date</label>
+              <input type="date" id="date" class="form-control" required />
+            </div>
+            <hr>
+            <div class="col-10 pb-2 m-auto text-center">
+              <label for="inputAddress" class="mb-2">Add Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Location" required>
+            </div>
+            <div class="col-10 pb-2 m-auto text-center">
+              <label for="inputAddress" class="mb-2">Add Email</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Email ID" required>
+            </div>
+            <hr>
+
+            <div class="col-6 pb-2 m-auto text-center">
+              <button type="submit" class="btn done px-5">Done</button>
+            </div>
+            <div class="col-6 pb-2 m-auto text-center">
+              <button class="btn btn-light px-5" onclick="reset()">Reset</button>
+            </div>
+
+          </form>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-12 appointmentinfosection border-start border-top border-2 position-absolute">
+          <h5 class="text-center mt-2">Appointment Details</h5>
+          <button type="button" class="btn-close closebtn position-absolute" aria-label="Close" onclick="closeform()"></button>
+          <hr>
+          <form class="col-12">
+            <p class="m-0 mb-2">Select Clinic</p>
+            <div class="scroll appointmenttab col-12">
+            </div>
+            <hr>
+            <p class="m-0 mb-2">Select Doctor</p>
+            <div class="scroll alldoctortab col-12">
+            </div>
+            <hr>
+            <p class="m-0 mb-2">Select Time Slot</p>
+            <div class="scroll timetab col-12">
+            </div>
+            <hr>
+            <div class="col-10 patientsearch m-auto">
+              <label for="patientsearch">Select Patient</label>
+              <input class="form-control position-relative " type="search" placeholder="Search Patient"
+                aria-label="Search">
+              <button class="btn btn-sm patientsearchbtn rounded m-0 position-absolute" type="submit"><i class="fa fa-search"
+                  aria-hidden="true"></i></button>
+            </div>
+            <hr>
+
+            <div class="col-10 m-auto py-2 text-center">
+              <button type="submit" class="btn done px-5">Done</button>
+            </div>
+            <div class="col-10 py-2 m-auto text-center">
+              <button class="btn btn-light px-5" onclick="reset()">Reset</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12 col-12 doctorinfosection border-start border-top border-2 position-absolute">
+          <h5 class="text-center mt-2">Doctor Details</h5>
+          <button type="button" class="btn-close closebtn position-absolute" aria-label="Close" onclick="closeform()"></button>
+          <hr>
+          <div class="form-body row text-center justify-content-center">
+              <div class="col-md-6 col-10 p-md-3">
+                <label class="col-md-3">Name<span class="required">*</span></label>
+                <input type="text" class="form-control" placeholder="Enter Full Name" name="doctor_name" value="">
+              </div>
+
+              <div class="col-md-6 col-10 p-md-3">
+              <label class="col-md-3">Email<span class="required"> * </span></label>
+                <input type="email" class="form-control" placeholder="Enter Email" name="email" value="">
+              </div>
+              <hr>
+              <div class="col-12 p-mt-3">
+              <label class="col-md-3">Mobile_Number<span class="required">*</span></label>
+            </div>
+          
+              <div class="col-md-3 col-10">
+                
+                <select name="phone_country_code" id="phone_country_code" class="form-control text-center">
+
+
+                  <option value="93">Afghanistan +93 </option>
+                  <option value="355">Albania  +355 </option>
+                  <option value="213">Algeria  +213 </option>
+                  <option value="1684">American Samoa  +1684 </option>
+                  <option value="376">Andorra  +376 </option>
+                  <option value="244">Angola  +244 </option>
+                  <option value="1264">Anguilla  +1264 </option>
+                  <option value="0">Antarctica  +0 </option>
+                  <option value="1268">Antigua and Barbuda  +1268 </option>
+                  <option value="54">Argentina  +54 </option>
+                  <option value="374">Armenia  +374 </option>
+                  <option value="297">Aruba  +297 </option>
+                  <option value="61">Australia  +61 </option>
+                  <option value="43">Austria  +43 </option>
+                  <option value="994">Azerbaijan  +994 </option>
+                  <option value="1242">Bahamas  +1242 </option>
+                  <option value="973">Bahrain  +973 </option>
+                  <option value="880">Bangladesh  +880 </option>
+                  <option value="1246">Barbados  +1246 </option>
+                  <option value="375">Belarus  +375 </option>
+                  <option value="32">Belgium  +32 </option>
+                  <option value="501">Belize  +501 </option>
+                  <option value="229">Benin  +229 </option>
+                  <option value="1441">Bermuda  +1441 </option>
+                  <option value="975">Bhutan  +975 </option>
+                  <option value="591">Bolivia  +591 </option>
+                  <option value="387">Bosnia and Herzegovina  +387 </option>
+                  <option value="267">Botswana  +267 </option>
+                  <option value="0">Bouvet Island  +0 </option>
+                  <option value="55">Brazil  +55 </option>
+                  <option value="246">British Indian Ocean Territory  +246 </option>
+                  <option value="673">Brunei Darussalam  +673 </option>
+                  <option value="359">Bulgaria  +359 </option>
+                  <option value="226">Burkina Faso  +226 </option>
+                  <option value="257">Burundi  +257 </option>
+                  <option value="855">Cambodia  +855 </option>
+                  <option value="237">Cameroon  +237 </option>
+                  <option value="1">Canada  +1 </option>
+                  <option value="238">Cape Verde  +238 </option>
+                  <option value="1345">Cayman Islands  +1345 </option>
+                  <option value="236">Central African Republic  +236 </option>
+                  <option value="235">Chad  +235 </option>
+                  <option value="56">Chile  +56 </option>
+                  <option value="86">China  +86 </option>
+                  <option value="61">Christmas Island  +61 </option>
+                  <option value="672">Cocos (Keeling) Islands  +672 </option>
+                  <option value="57">Colombia  +57 </option>
+                  <option value="269">Comoros  +269 </option>
+                  <option value="242">Congo  +242 </option>
+                  <option value="242">Congo, the Democratic Republic of the  +242 </option>
+                  <option value="682">Cook Islands  +682 </option>
+                  <option value="506">Costa Rica  +506 </option>
+                  <option value="225">Cote D&#039;Ivoire  +225 </option>
+                  <option value="385">Croatia  +385 </option>
+                  <option value="53">Cuba  +53 </option>
+                  <option value="357">Cyprus  +357 </option>
+                  <option value="420">Czech Republic  +420 </option>
+                  <option value="45">Denmark  +45 </option>
+                  <option value="253">Djibouti  +253 </option>
+                  <option value="1767">Dominica  +1767 </option>
+                  <option value="1809">Dominican Republic  +1809 </option>
+                  <option value="593">Ecuador  +593 </option>
+                  <option value="20">Egypt  +20 </option>
+                  <option value="503">El Salvador  +503 </option>
+                  <option value="240">Equatorial Guinea  +240 </option>
+                  <option value="291">Eritrea  +291 </option>
+                  <option value="372">Estonia  +372 </option>
+                  <option value="251">Ethiopia  +251 </option>
+                  <option value="500">Falkland Islands (Malvinas)  +500 </option>
+                  <option value="298">Faroe Islands  +298 </option>
+                  <option value="679">Fiji  +679 </option>
+                  <option value="358">Finland  +358 </option>
+                  <option value="33">France  +33 </option>
+                  <option value="594">French Guiana  +594 </option>
+                  <option value="689">French Polynesia  +689 </option>
+                  <option value="0">French Southern Territories  +0 </option>
+                  <option value="241">Gabon  +241 </option>
+                  <option value="220">Gambia  +220 </option>
+                  <option value="995">Georgia  +995 </option>
+                  <option value="49">Germany  +49 </option>
+                  <option value="233">Ghana  +233 </option>
+                  <option value="350">Gibraltar  +350 </option>
+                  <option value="30">Greece  +30 </option>
+                  <option value="299">Greenland  +299 </option>
+                  <option value="1473">Grenada  +1473 </option>
+                  <option value="590">Guadeloupe  +590 </option>
+                  <option value="1671">Guam  +1671 </option>
+                  <option value="502">Guatemala  +502 </option>
+                  <option value="224">Guinea  +224 </option>
+                  <option value="245">GuineaBissau  +245 </option>
+                  <option value="592">Guyana  +592 </option>
+                  <option value="509">Haiti  +509 </option>
+                  <option value="0">Heard Island and Mcdonald Islands  +0 </option>
+                  <option value="39">Holy See (Vatican City State)  +39 </option>
+                  <option value="504">Honduras  +504 </option>
+                  <option value="852">Hong Kong  +852 </option>
+                  <option value="36">Hungary  +36 </option>
+                  <option value="354">Iceland  +354 </option>
+                  <option value="91" selected>India  +91 </option>
+                  <option value="62">Indonesia  +62 </option>
+                  <option value="98">Iran, Islamic Republic of  +98 </option>
+                  <option value="964">Iraq  +964 </option>
+                  <option value="353">Ireland  +353 </option>
+                  <option value="972">Israel  +972 </option>
+                  <option value="39">Italy  +39 </option>
+                  <option value="1876">Jamaica  +1876 </option>
+                  <option value="81">Japan  +81 </option>
+                  <option value="962">Jordan  +962 </option>
+                  <option value="7">Kazakhstan  +7 </option>
+                  <option value="254">Kenya  +254 </option>
+                  <option value="686">Kiribati  +686 </option>
+                  <option value="850">Korea, Democratic People&#039;s Republic of  +850 </option>
+                  <option value="82">Korea, Republic of  +82 </option>
+                  <option value="965">Kuwait  +965 </option>
+                  <option value="996">Kyrgyzstan  +996 </option>
+                  <option value="856">Lao People&#039;s Democratic Republic  +856 </option>
+                  <option value="371">Latvia  +371 </option>
+                  <option value="961">Lebanon  +961 </option>
+                  <option value="266">Lesotho  +266 </option>
+                  <option value="231">Liberia  +231 </option>
+                  <option value="218">Libyan Arab Jamahiriya  +218 </option>
+                  <option value="423">Liechtenstein  +423 </option>
+                  <option value="370">Lithuania  +370 </option>
+                  <option value="352">Luxembourg  +352 </option>
+                  <option value="853">Macao  +853 </option>
+                  <option value="389">Macedonia, the Former Yugoslav Republic of  +389 </option>
+                  <option value="261">Madagascar  +261 </option>
+                  <option value="265">Malawi  +265 </option>
+                  <option value="60">Malaysia  +60 </option>
+                  <option value="960">Maldives  +960 </option>
+                  <option value="223">Mali  +223 </option>
+                  <option value="356">Malta  +356 </option>
+                  <option value="692">Marshall Islands  +692 </option>
+                  <option value="596">Martinique  +596 </option>
+                  <option value="222">Mauritania  +222 </option>
+                  <option value="230">Mauritius  +230 </option>
+                  <option value="269">Mayotte  +269 </option>
+                  <option value="52">Mexico  +52 </option>
+                  <option value="691">Micronesia, Federated States of  +691 </option>
+                  <option value="373">Moldova, Republic of  +373 </option>
+                  <option value="377">Monaco  +377 </option>
+                  <option value="976">Mongolia  +976 </option>
+                  <option value="1664">Montserrat  +1664 </option>
+                  <option value="212">Morocco  +212 </option>
+                  <option value="258">Mozambique  +258 </option>
+                  <option value="95">Myanmar  +95 </option>
+                  <option value="264">Namibia  +264 </option>
+                  <option value="674">Nauru  +674 </option>
+                  <option value="977">Nepal  +977 </option>
+                  <option value="31">Netherlands  +31 </option>
+                  <option value="599">Netherlands Antilles  +599 </option>
+                  <option value="687">New Caledonia  +687 </option>
+                  <option value="64">New Zealand  +64 </option>
+                  <option value="505">Nicaragua  +505 </option>
+                  <option value="227">Niger  +227 </option>
+                  <option value="234">Nigeria  +234 </option>
+                  <option value="683">Niue  +683 </option>
+                  <option value="672">Norfolk Island  +672 </option>
+                  <option value="1670">Northern Mariana Islands  +1670 </option>
+                  <option value="47">Norway  +47 </option>
+                  <option value="968">Oman  +968 </option>
+                  <option value="92">Pakistan  +92 </option>
+                  <option value="680">Palau  +680 </option>
+                  <option value="970">Palestinian Territory, Occupied  +970 </option>
+                  <option value="507">Panama  +507 </option>
+                  <option value="675">Papua New Guinea  +675 </option>
+                  <option value="595">Paraguay  +595 </option>
+                  <option value="51">Peru  +51 </option>
+                  <option value="63">Philippines  +63 </option>
+                  <option value="0">Pitcairn  +0 </option>
+                  <option value="48">Poland  +48 </option>
+                  <option value="351">Portugal  +351 </option>
+                  <option value="1787">Puerto Rico  +1787 </option>
+                  <option value="974">Qatar  +974 </option>
+                  <option value="262">Reunion  +262 </option>
+                  <option value="40">Romania  +40 </option>
+                  <option value="70">Russian Federation  +70 </option>
+                  <option value="250">Rwanda  +250 </option>
+                  <option value="290">Saint Helena  +290 </option>
+                  <option value="1869">Saint Kitts and Nevis  +1869 </option>
+                  <option value="1758">Saint Lucia  +1758 </option>
+                  <option value="508">Saint Pierre and Miquelon  +508 </option>
+                  <option value="1784">Saint Vincent and the Grenadines  +1784 </option>
+                  <option value="684">Samoa  +684 </option>
+                  <option value="378">San Marino  +378 </option>
+                  <option value="239">Sao Tome and Principe  +239 </option>
+                  <option value="966">Saudi Arabia  +966 </option>
+                  <option value="221">Senegal  +221 </option>
+                  <option value="381">Serbia and Montenegro  +381 </option>
+                  <option value="248">Seychelles  +248 </option>
+                  <option value="232">Sierra Leone  +232 </option>
+                  <option value="65">Singapore  +65 </option>
+                  <option value="421">Slovakia  +421 </option>
+                  <option value="386">Slovenia  +386 </option>
+                  <option value="677">Solomon Islands  +677 </option>
+                  <option value="252">Somalia  +252 </option>
+                  <option value="27">South Africa  +27 </option>
+                  <option value="0">South Georgia and the South Sandwich Islands  +0 </option>
+                  <option value="34">Spain  +34 </option>
+                  <option value="94">Sri Lanka  +94 </option>
+                  <option value="249">Sudan  +249 </option>
+                  <option value="597">Suriname  +597 </option>
+                  <option value="47">Svalbard and Jan Mayen  +47 </option>
+                  <option value="268">Swaziland  +268 </option>
+                  <option value="46">Sweden  +46 </option>
+                  <option value="41">Switzerland  +41 </option>
+                  <option value="963">Syrian Arab Republic  +963 </option>
+                  <option value="886">Taiwan, Province of China  +886 </option>
+                  <option value="992">Tajikistan  +992 </option>
+                  <option value="255">Tanzania, United Republic of  +255 </option>
+                  <option value="66">Thailand  +66 </option>
+                  <option value="670">TimorLeste  +670 </option>
+                  <option value="228">Togo  +228 </option>
+                  <option value="690">Tokelau  +690 </option>
+                  <option value="676">Tonga  +676 </option>
+                  <option value="1868">Trinidad and Tobago  +1868 </option>
+                  <option value="216">Tunisia  +216 </option>
+                  <option value="90">Turkey  +90 </option>
+                  <option value="7370">Turkmenistan  +7370 </option>
+                  <option value="1649">Turks and Caicos Islands  +1649 </option>
+                  <option value="688">Tuvalu  +688 </option>
+                  <option value="256">Uganda  +256 </option>
+                  <option value="380">Ukraine  +380 </option>
+                  <option value="971">United Arab Emirates  +971 </option>
+                  <option value="44">United Kingdom  +44 </option>
+                  <option value="1">United States  +1 </option>
+                  <option value="1">United States Minor Outlying Islands  +1 </option>
+                  <option value="598">Uruguay  +598 </option>
+                  <option value="998">Uzbekistan  +998 </option>
+                  <option value="678">Vanuatu  +678 </option>
+                  <option value="58">Venezuela  +58 </option>
+                  <option value="84">Viet Nam  +84 </option>
+                  <option value="1284">Virgin Islands, British  +1284 </option>
+                  <option value="1340">Virgin Islands, U.s.  +1340 </option>
+                  <option value="681">Wallis and Futuna  +681 </option>
+                  <option value="212">Western Sahara  +212 </option>
+                  <option value="967">Yemen  +967 </option>
+                  <option value="260">Zambia  +260 </option>
+                  <option value="263">Zimbabwe  +263 </option>
+                </select>
+              </div>
+             
+              <div class="col-md-auto col-10 p-mb-3 gx-md-0">
+                <input name="phone_number" type="text" placeholder="mobile number"
+                  class="form-control input-height phone_number phone_number2" value="" />
+                <span class="mobile_error" style="color: red"></span>
+                <span class="mobile_error2" style="color: red"></span>
+               </div>
+               <hr>
+            <div class="col-10  m-auto">
+              <p class="m-0 mb-2">Gender</p>
+              <div class="d-flex">
+                <input class="col-4 text-center genderbtn" type="button" value="Male"></input>
+                <input class="col-4 text-center genderbtn" type="button" value="Female"></input>
+                <input class="col-4 text-center genderbtn" type="button" value="Others"></input>
+              </div>
+            </div>
+            <hr>
+            
+              <div class="col-12">
+              <p class="m-0">Speciality</p>
+              <div class="scroll specialitytab col-12">
+              </div>
+            </div>
+            <hr>
+            <div class="col-md-6">
+              <label>DegreeSuffix<span class="required">*</span></label>
+              <input type="text" class="form-control" name="degree_suffix" placeholder="Specialization" value="">
+            </div>
+
+                <div class="col-md-6">
+                  <label class="control-label">ExpertiseSubSpecialty<span class="required">*</span></label>
+                  <input type="text" class="form-control" name="expertise_subSpecialty" placeholder="Sub-Speciality" value="">
+                </div>
+
+              <div class="col-md-6 mb-3">
+                <label>RegistrationNo<span class="required">*</span></label>
+                <input type="text" class="form-control" name="registration_num" placeholder="Reg. No." value="">
+              </div>
+
+              <div class="col-md-6">
+                <label class="control-label">Languages<span class="required">*</span></label>
+                <input type="text" class="form-control" name="languages" value="" placeholder="Languages">
+              </div>
+              <hr>
+              <div class="col-10">
+                <label>Address<span class="required">*</span></label>
+                <textarea name="address" id="address" cols="30" rows="5" class="form-control"></textarea>
+              </div>
+
+              <div class="col-md-6">
+                <label>Image<span class="required">*</span></label>
+                <input type="file" name="image" id="doctor_image" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label>PDF Header<span class="required">*</span></label>
+                <input type="file" name="pdf_header" id="pdf_header" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label>PDF footer<span class="required"> * </span></label>
+                <input type="file" name="pdf_footer" id="pdf_footer" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label>Consulation Fee<span class="required">*</span></label>
+                <input type="number" class="form-control" name="consulationFee" placeholder="Consulation Fee" value="">
+              </div>
+
+   
+              <div class="col-md-6">
+                <label>Time Per Patient (In Minutes)<span class="required"> * </span></label>
+                <input type="number" class="form-control" name="time_per_patient" value="" placeholder="Fill Time">
+              </div>
+
+                
+              <div class="col-md-6">
+                <label>Phone Number<span class="required">*</span></label>
+                <input type="number" class="form-control" name="appointment_phone_number" value="" placeholder="phone number">
+              </div>
+
+              <div class="col-md-6">
+                <label>Website<span class="required"> * </span></label>
+                <input type="url" class="form-control" name="website" value="" placeholder="Doctor&#039;s Website">
+              </div>
+     
+              <div class="col-md-6">
+                <label>Start Date<span class="required">*</span></label>
+                <input type="date" class="form-control" name="start_date" value="">
+              </div>
+
+              <div class="col-md-6">
+                <label>Agreement File<span class="required">*</span></label>
+                <input type="file" name="agreement_file" id="agreement_file" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label>Agreement Renew Date<span class="required">*</span></label>
+                <input type="date" class="form-control" name="agreement_renew_date" value="">
+              </div>
+
+              <div class="col-md-6">
+                <label>Hours Per Month<span class="required">*</span></label>
+                  <input type="number" class="form-control" name="hours_per_month" value="">
+                </div>
+  
+                <div class="col-md-6">
+                  <label>Total Experience (In Years)<span class="required">*</span></label>
+                  <input type="number" class="form-control" name="total_experience" value="">
+                </div>
+
+                <div class="col-md-6">
+                  <label>Rent Amount<span class="required">*</span></label>
+                  <input type="number" class="form-control" name="rent_amount" value="">
+                </div>
+
+                <div class="col-md-6">
+                  <label>Security Amount<span class="required">*</span></label>
+                  <input type="number" class="form-control" name="security_amount" value="">
+                </div>
+
+                <div class="col-12 pt-3">
+              <a href="javascript:void(0)" class="btn btn-success add_timings">Timings +</a><span class="required"> * </span>
+                </div>
+             
+              
+                <div class="col-10 py-2 m-auto text-center">
+                      <button type="submit" class="btn done px-5">Done</button>
+                </div>
+                <div class="col-10 py-2 m-auto text-center">
+                      <button type="button" class="btn btn-light px-5" onclick="reset()">Reset</button>
+                    </div>
+                
+</div>
+<!--doctorinfosection row end-->
+         
+   
+
+   
+             
+             
+
+
+
+
+    
+          </div>
+      </div>
+    </section>
+        <!--Patientsection row end-->
+      </div>
+      <!--Container-fluid end-->
+      <section class="patientsection border-start border-5 border-dark border-opacity-50 position-relative">
+        <div class="container-fluid">
+        <div class=" ps-md-3 pt-4 calender"></div>
+        <div class="row gx-0">
+        <div class="col-lg-2 col-md-4 ps-md-3 position-relative card3">
+          <div class="card shadow-lg" >
+            <div class="card-body p-2">
+              <h5 class="card-title fw-bolder">Room Number:2</h5>
+              <p class="card-text starttime">Start Time</p>
+              <p class="card-text endtime">End Time</p>
+              <p class="card-text totalhrs">Total Hours</p>
+              <button class="btn btn-danger col-12" onclick="timepopup()">Stop Time</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 ps-md-3 position-relative card1">
+          <div class=" card">
+            <div class="card-body p-2">
+              <h5 class="card-title fw-bolder">Room Number:</h5>
+              <p class="card-text starttime">Start Time</p>
+              <p class="card-text endtime">End Time</p>
+              <p class="card-text totalhrs">Total Hours</p>
+              <button class="btn btn-success col-12" onclick="timepopup()">Start Time</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-3 card2 position-absolute">
+          <div class="card">
+            <div class="card-body p-2">
+              <button type="button" class="btn-close float-end" aria-label="Close" onclick="closeform()"></button>
+              <label>Choose Start Time</label>
+              <input class="form-control" id="clinictime" type="time">
+                    <hr>
+              <select class="form-control">
+                <option disabled selected>Choose Room Number</option>
+                <option class="clinicroom" value="01">01</option>
+                <option class="clinicroom" value="02">02</option>
+                <option class="clinicroom" value="03">03</option>
+                <option class="clinicroom" value="04">04</option>
+                <option class="clinicroom" value="05">05</option>
+                <option class="clinicroom" value="06">06</option>
+                <option class="clinicroom" value="07">07</option>
+                <option class="clinicroom" value="08">08</option>
+                <option class="clinicroom" value="09">09</option>
+                <option class="clinicroom" value="10">10</option>
+              </select>
+              <hr>
+              <label>Choose Clinic Location</label>
+              <br>
+              <input class="cliniclocation" type="radio" value="Aartas Delhi"><span>Aartas Delhi</span>
+              <hr>
+              <button class="btn btn-success col-12" onclick="timecardsubmission()">Done</button>
+
+            </div>
+          </div>
+        </div>
+        </div>
+       
+        <hr>
+        <section class="timeslotsection">
+          <div class="container-fluid ">
+            <div class="row ps-md-3 align-items-center ">
+              <div class=" col-auto p-0 m-0 align-items-center">
+                <h4>Time slot avaliable<i class="fa fa-plus-circle ms-2" aria-hidden="true" style="color:#222023b4;"></i></h4>             
+              </div>
+          </div>
+          <div class="col-10 py-md-2">
+            <div class="row">
+              <div class="col-lg-1 col-md-3 my-md-1"><button type="button" class="btn btn-lg timeslotbtns">10:10 AM</button></div>
+              <div class="col-lg-1 col-md-3 my-md-1"><button type="button" class="btn btn-lg timeslotbtns">10:10 AM</button></div>
+              <div class="col-lg-1 col-md-3 my-md-1"><button type="button" class="btn btn-lg timeslotbtns">10:10 AM</button></div>
+              <div class="col-lg-1 col-md-3 my-md-1"><button type="button" class="btn btn-lg timeslotbtns">10:10 AM</button></div>
+              <div class="col-lg-1 col-md-3 my-md-1"><button type="button" class="btn btn-lg timeslotbtns">10:10 AM</button></div>
+              <div class="col-lg-1 col-md-3 my-md-1"><button type="button" class="btn btn-lg timeslotbtns">10:10 AM</button></div>
+              <div class="col-lg-1 col-md-3 my-md-1"><button type="button" class="btn btn-lg timeslotbtns">10:10 AM</button></div>
+            </div>
+           
+          </div>
+          <hr>
+        </div>
+        </section>
+
+        <section class="allappointmentsection">
+          <div class="container-fluid">
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Status</th>
+                  <th>Patient Name</th>
+                  <th>Phone Number</th>
+                  <th>Time</th>
+                  <th>Total Amount</th>
+                  <th>Vitals</th>
+                  <th>Actions</th>
+                  <th>More</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                  <img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_confirmed">Confirmed</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910000</td>
+                  <td>10:00 AM</td>
+                  <td>1500<button class="ms-1 btn btn-sm status_completed">Done</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                  <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+                <tr>
+                  <th scope="row"><img src="../src/images/Vitalsdone.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_vitalsdone">Vital Done</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910001</td>
+                  <td>10:00 AM</td>
+                  <td>1500<button class="ms-1 btn btn-sm status_pending">Pending</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                  <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+                <tr>
+                  <th scope="row"><img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_pending">Cancelled</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910000</td>
+                  <td>10:00 AM</td>
+                  <td>1500<button class="ms-1 btn btn-sm status_completed">Done</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                  <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+                <tr>
+                  <th scope="row"><img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_completed">Completed</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910000</td>
+                  <td>10:00 AM</td>
+                  <td>1500<button class="ms-1 btn btn-sm status_completed">Done</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                  <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+                <tr>
+                  <th scope="row"><img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
+                  <td><button class="btn btn-sm status_confirmed">Confirmed</button></td>
+                  <td>Kabir Sharma</td>
+                  <td>9999910000</td>
+                  <td>10:00 AM</td>
+                  <td>1500<button class="ms-1 btn btn-sm status_completed">Done</button></td>
+                  <td><img src="../src/images/vitals.png" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/cart.png" style="width:1.5rem;" class="me-1" />
+                    <img src="../src/images/medicine.png" class="ms-1" style="width:1.5rem;"/></td>
+                  <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
+                </tr>
+              </tbody>
+            </table>
+           
+          </div>
+        </section>
+      </section>
+
+  <script src="https://kit.fontawesome.com/083c547933.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../src/js/dashboard.js"></script>
+</body>
+
+</html>

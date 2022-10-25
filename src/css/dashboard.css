@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+
+html {
+    font-family: 'Urbanist', sans-serif;
+}
+
+:root {
+    --burntumber: #96351E;
+    --brandy: #DBB98F;
+    --Raffia: #DDC6A8;
+    --pearl: #ffffff;
+    --seashell: #f2f2f2;
+    --charcoal: #222023;
+    --lightblue: #A2B9C9;
+    --lightgreen:#95B3AB;
+    --lightyellow:#EFD78D;
+    --lightbrown:#D5AD70;
+    --lightred:#E8AD98;
+}
+body::-webkit-scrollbar {
+    height: 0.7rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--seashell);
+
+}
+
+
+body::-webkit-scrollbar-thumb {
+    background: var(--burntumber);
+    border-radius: 10px;
+}
+
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.scroll::-webkit-scrollbar {
+    height: 0.7rem;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: var(--seashell);
+
+}
+
+
+.scroll::-webkit-scrollbar-thumb {
+    background: var(--burntumber);
+    border-radius: 10px;
+}
+
+
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.navsection {
+    background-color: var(--seashell);
+    font-family: 'Urbanist', sans-serif;
+}
+
+.navsection .menu p {
+    color: var(--charcoal);
+    font-size: 0.875rem;
+}
+
+.navsection .addbtn {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+    letter-spacing: 0.078rem;
+    width: 70%;
+}
+
+.navsection i {
+    font-size: 150%;
+}
+
+.doctorsection i {
+    font-size: 200%;
+}
+
+.navsection .username {
+    font-size: 1rem;
+    letter-spacing: 0.009rem;
+}
+
+.navsection .userstatus {
+    font-size: 1rem;
+    letter-spacing: 0.009rem;
+}
+
+.navbar-brand img {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.search input {
+    text-align: center;
+}
+
+.searchbtn {
+    border: none;
+    color: var(--burntumber);
+    background-color: transparent;
+    left: 5%;
+    top: 15%;
+}
+
+.patientsearch input {
+    text-align: center;
+}
+
+.patientsearchbtn {
+    bottom: 22%;
+    left: 10%;
+
+}
+.navsection .addoptions {
+    left: 0;
+    z-index: 1;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.navsection .addoptions .doctorslot {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.navsection .addoptions input {
+    border: none;
+    color: var(--charcoal);
+    background-color: var(--pearl);
+    font-size: 1rem;
+}
+
+.navsection .addoptions input:hover {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+}
+
+.menu .col-auto:hover {
+    background-color: var(--pearl);
+}
+
+.doctorsection {
+    font-family: 'Urbanist', sans-serif;
+
+}
+
+.doctorsection .doctortab {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.doctorsection .doctortab h6 {
+    font-size: 1rem;
+}
+
+.doctorsection .doctortab .btn {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+    border: 1px solid var(--pearl);
+}
+
+.doctorsection .doctortab .btn:hover {
+    background-color: var(--pearl);
+    color: var(--charcoal);
+    border: 1px solid var(--charcoal);
+}
+
+.appointmenttab {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.appointmenttab h6 {
+    font-size: 1rem;
+}
+
+.appointmentbtns {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+    border: 1px solid var(--pearl);
+}
+
+.appointmentinfosection {
+    background-color: var(--seashell);
+    right: 0;
+    font-family: 'Urbanist', sans-serif;
+    box-shadow: 0px 0px 0px 1600px#22202370;
+    z-index: 2;
+}
+
+.appointmentinfosection .doctorsbtns {
+    background-color: var(--brandy);
+    color: var(--charcoal);
+}
+
+.appointmentinfosection .clinicbtns {
+    background-color: var(--pearl);
+    color: var(--charcoal);
+}
+
+.appointmentinfosection .timebtns {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+}
+
+.patientinfosection .done {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+}
+
+.appointmentinfosection .done {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+}
+
+.adddoctor .btn {
+    background-color: var(--pearl);
+    border: 1px solid var(--burntumber);
+}
+
+.adddoctor {
+    background-color: var(--seashell);
+    color: var(--burntumber);
+    font-size: 1.5rem;
+}
+
+.adddoctor:hover {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+}
+
+.scroll {
+    padding: 1px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: min-content;
+
+}
+
+.addpatient {
+    background-color: var(--seashell);
+    font-size: 1.2rem;
+    border: none;
+    color: var(--charcoal);
+    font-family: 'Urbanist', sans-serif;
+}
+
+.addpatient:hover {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+}
+
+.patientinfosection {
+    background-color: var(--seashell);
+    right: 0;
+    font-family: 'Urbanist', sans-serif;
+    z-index:2;
+    box-shadow: 0px 0px 0px 1600px#22202370;
+}
+.closebtn{
+    top:1%;
+}
+.genderbtn {
+    border: none;
+    color: var(--charcoal);
+
+}
+
+.genderbtn:focus {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+}
+
+.doctorinfosection{
+    background-color: var(--seashell);
+    right: 0;
+    font-family: 'Urbanist', sans-serif;
+    box-shadow: 0px 0px 0px 1600px#22202370;
+    z-index:2;
+}
+
+.doctorinfosection .specialitybtns{
+    background-color:var(--Raffia);
+    color:var(--charcoal);
+}
+
+.doctorinfosection .done {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+}
+
+.patientsection{
+font-family: 'Urbanist', sans-serif;
+}
+
+.patientsection .calender{
+    font-weight: 800;
+    font-size:2rem;
+}
+.patientsection .card1 .card{
+    background-color: var(--seashell);
+}
+.patientsection .card1 .card-text{
+    color:#22202388;
+    font-weight: 800;
+}
+.patientsection .card2{
+    top:0;
+    left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  display:none;
+}
+.patientsection .card2 .card{
+ box-shadow: 0px 0px 0px 1600px#22202370;
+}
+.timeslotsection{
+font-family: 'Urbanist', sans-serif;
+}
+.timeslotsection h4{
+    font-size:1.8rem;
+    color:#222023b4;
+    font-weight: 900;
+    margin:0 auto;
+}
+.timeslotsection i{
+    font-size:1.8rem;
+}
+
+.timeslotsection .timeslotbtns{
+    border: 1px solid var(--burntumber);
+    color:var(--burntumber);
+}
+
+.allappointmentsection .table tr:nth-child(even){
+    background-color:var(--lightyellow);
+}
+
+.allappointmentsection .status_confirmed{
+background-color:var(--lightblue);
+font-weight:800;
+}
+.allappointmentsection  .status_completed{
+    background-color:var(--lightgreen);
+    font-weight:800;
+}
+.allappointmentsection  .status_vitalsdone{
+    background-color:var(--lightbrown);
+    font-weight:800;
+}
+.allappointmentsection .status_pending{
+    background-color:var(--lightred);
+    font-weight:800;
+}
+@media (max-width:992px) {
+    .navsection .username {
+        font-size: 0.94rem;
+    }
+
+    .navsection .userstatus {
+        font-size: 1rem;
+
+    }
+
+    .navsection menu p {
+        font-size: 0.5rem;
+    }
+
+    .navsection .addbtn {
+        font-size: 1rem;
+    }
+
+    .navsection .addoptions {
+        width: fit-content;
+    }
+
+    .menu p {
+        display: none;
+    }
+    .scroll::-webkit-scrollbar {
+        height: 0.6rem;
+    }
+}
+
+@media (max-width:790px) {
+    .navsection .username {
+        font-size: 0.9rem;
+    }
+
+    .navsection .userstatus {
+        font-size: 0.9rem;
+    }
+
+    .navsection .addoptions {
+        width: fit-content;
+    }
+
+    .navsection .addbtn {
+        font-size: 1rem;
+    }
+
+    .menu p {
+        display: none;
+    }
+
+    .addpatient {
+        font-size: 1rem;
+    }
+    .scroll::-webkit-scrollbar {
+        height: 0.5rem;
+    }
+}
+
+@media(max-width:768px) {
+    .navsection .username {
+        font-size: 0.9rem;
+    }
+
+    .navsection .userstatus {
+        font-size: 0.9rem;
+    }
+    .scroll::-webkit-scrollbar {
+        height: 0.5rem;
+    }
+}
+
+@media(max-width:767px)and (min-width:577px) {
+    .navsection .username {
+        font-size: 0.6rem;
+    }
+
+    .navsection .userstatus {
+        font-size: 0.6rem;
+
+    }
+
+    .navsection .addbtn {
+        font-size: 0.8rem;
+    }
+
+    .addpatient {
+        font-size: 0.9rem;
+    }
+
+    .searchbtn {
+        font-size: 0.7rem;
+        left:0;
+    }
+
+    .menu p {
+        display: none;
+    }
+
+    .search input {
+        font-size: 0.6rem;
+    }
+    .scroll::-webkit-scrollbar {
+        height: 0.5rem;
+    }
+}
+
+@media (width:576px) {
+    .navsection .username {
+        font-size: 0.6rem;
+    }
+
+    .navsection .userstatus {
+        font-size: 0.6rem;
+    }
+
+    .addpatient {
+        font-size: 1rem;
+    }
+
+    .menu p {
+        display: none;
+    }
+
+    .doctorsection i {
+        font-size: 1.5rem;
+    }
+
+    .navsection .addbtn {
+        font-size: 0.6rem;
+    }
+
+    .search input {
+        font-size: 0.6rem;
+    }
+
+    .searchbtn {
+        font-size: 0.8rem;
+    }
+    .scroll::-webkit-scrollbar {
+        height: 0.4rem;
+    }
+}
+
+@media(min-width:487px) and (max-width:575px) {
+    .navsection .username {
+        font-size: 1rem;
+    }
+
+    .navsection .addbtn {
+        font-size: 1rem;
+    }
+
+    .search input {
+        font-size: 1rem;
+    }
+
+    .navsection .userstatus {
+        font-size: 1rem;
+    }
+
+    .addpatient {
+        font-size: 1rem;
+    }
+
+    .menu p {
+        display: none;
+    }
+
+    .doctorsection i {
+        font-size: 2rem;
+    }
+
+    .searchbtn {
+        font-size: 1rem;
+    }
+    .scroll::-webkit-scrollbar {
+        height: 0.3rem;
+    }
+
+}
+
+@media(max-width:376px) {
+
+    .navsection .username {
+        font-size: 0.8rem;
+
+    }
+
+    .navsection .userstatus {
+        font-size: 0.8rem;
+    }
+
+    .search {
+        padding: 5%;
+    }
+
+    .searchbtn {
+        font-size: 1rem;
+    }
+    .scroll::-webkit-scrollbar {
+        height: 0.2rem;
+    }
+}
+
+@media(max-width:321px) {
+    .search {
+        padding: 5%;
+    }
+
+    .searchbtn {
+        font-size: 1rem;
+    }
+    .scroll::-webkit-scrollbar {
+        height: 0.2rem;
+    }
+}
+
+
+
