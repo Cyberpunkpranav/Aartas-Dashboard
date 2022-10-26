@@ -6,6 +6,8 @@ let specialitytab = $('.specialitytab');
 let adddoctorbtn = $('.adddoctorbtn');
 let calender = $('.calender');
 let starttime = $('.starttime');
+let clinictime = document.getElementById('#clinictime');
+let timeslots = $('.timeslots');
 
 $('.addoptions').hide(500);
 
@@ -74,6 +76,13 @@ for(var k=10;k>=0;k--){
         timetab.html(timearray[l]+=timetab.html()); 
         }
         
+        
+    for(var m=10;m>=0;m--){
+        let timeslotarray = [];
+        timeslotarray[m] = `<button class="btn timeslotbtns m-1"><h6 class="m-0">Time Slot ${[m]}</h6><p class="m-0"></button>`;
+        timeslots.html(timeslotarray[m]+=timeslots.html()); 
+        }
+
         var specialityvalue = [
             {id:1,name:"Cardilogy"},
             {id:2,name:"Internal Medicine"},
@@ -134,13 +143,17 @@ var currentDate = monthname + " " + fullDate.getDate() +","+fullDate.getFullYear
 calender.html(currentDate);
 
 
-function timepopup(){
-$('.card2').show();
 
-}
+$('#startbtn').attr('disabled',true);
 
-function timecardsubmission(){
-   console.log($('#clinictime').value);
-    console.log($('.clinicroom')[0].value);
+
     
+$('#starttime').on('input',function(){
+    console.log($('#starttime').attr('value'));
+    $('#startbtn').attr('disabled',false);
+})
+
+function timeview1(){
+    $('#starttime').attr('disabled',true); 
 }
+
