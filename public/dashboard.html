@@ -86,9 +86,9 @@
 
           <!--Add Button Options-->
           <div class="col-lg-12 col-md-10 col-sm-12 text-center addoptions  position-absolute">
-            <input class="col-12 p-lg-2 border-2 border-bottom shadow-sm text-start patient" type="button"
+            <input class="col-12 p-lg-2 border-2 border-bottom  text-start patient" type="button"
               value="Patient">
-            <input class="col-12 p-lg-2 text-start border-2 border-bottom appointment shadow-sm" type="button"
+            <input class="col-12 p-lg-2 text-start border-2 border-bottom appointment" type="button"
               value="Appointment">
             <input class="col-12 p-lg-2 doctorslot shadow-sm text-start" type="button" value="Doctor Slot">
           </div>
@@ -623,28 +623,39 @@
       <!--Container-fluid end-->
       <section class="patientsection border-start border-5 border-dark border-opacity-50 position-relative">
         <div class="container-fluid">
-        <div class=" ps-md-3 pt-4 calender"></div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6">
+                <div class=" ps-md-3 pt-4 " id="calender">
+                </div>
+              </div>
+              <div class="col-6 ">
+               <div class="float-end pe-4 pt-4" id="livetime">
+                </div>
+              </div>
+            </div>
+          </div>
+       
         <div class="row gx-0">
         <div class=" col-xl-3 col-lg-3 col-md-5 col-sm-6 col-10 ps-md-3 position-relative card1">
           <div class="card">
-    
             <div class="card-body p-2">
               <div class="row">
                 <div class="col-8">
                   <h5 class="card-title fw-bolder text-center mt-1">Room Number</h5>
                 </div>
                 <div class="col-4">
-                  <select class="form-control bg-transparent border-0">
-                    <option class="clinicroom" value="01">01</option>
-                    <option class="clinicroom" value="02">02</option>
-                    <option class="clinicroom" value="03">03</option>
-                    <option class="clinicroom" value="04">04</option>
-                    <option class="clinicroom" value="05">05</option>
-                    <option class="clinicroom" value="06">06</option>
-                    <option class="clinicroom" value="07">07</option>
-                    <option class="clinicroom" value="08">08</option>
-                    <option class="clinicroom" value="09">09</option>
-                    <option class="clinicroom" value="10">10</option>
+                  <select class="form-control bg-transparent border-0 " id="clinicroom">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
                   </select>
                 </div>
               </div>
@@ -653,12 +664,12 @@
               <p class="card-text text-center mt-2">Start Time</p>
             </div>
             <div class="col-6">
-              <input type=time id="starttime" class="form-control bg-transparent border-0" value=""/>
+              <input type=time id="starttime" class="form-control bg-transparent border-0 text-center" value=""/>
             </div>
           </div>
           <div class="row">
             <div class="col-6">
-            <p class="card-text text-center mt-2" >End Time</p>
+            <p class="card-text text-center mt-2">End Time</p>
           </div>
           <div class="col-6">
             <input type=time id="endtime" class="form-control bg-transparent border-0" value="" />
