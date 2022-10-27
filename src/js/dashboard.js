@@ -9,15 +9,16 @@ let starttime = $('.starttime');
 let clinictime = document.getElementById('#clinictime');
 let timeslots = $('.timeslots');
 
-$('.addoptions').hide(500);
 
+
+$('.addoptions').hide();
 $('.addbtn')[0].addEventListener('click', function () {
 
-    if ($('.addoptions').hide(500)) {
-        $('.addoptions').show(500)
-        $('.addoptions').css('width', '150%');
-    }
-
+    // if ($('.addoptions').hide(500)){
+    //     $('.addoptions').show(500)
+    //     $('.addoptions').css('width', '150%');
+    // }
+    $('.addoptions').toggle(500);
 });
 
 $('.patientinfosection').hide();
@@ -50,20 +51,6 @@ for (var i = 20; i >= 0; i--) {
     let doctorarray = [];
     doctorarray[i] = `<button class="btn m-1"><h6 class="m-0">Doctors Name ${[i]}</h6><p class="m-0"></button>`;
     doctortab.html(doctorarray[i] += doctortab.html());
-}
-
-
-for (var j = 7; j >= 0; j--) {
-    let appointmentarray = [];
-    appointmentarray[j] = `<button class="btn clinicbtns m-1"><h6 class="m-0">Aartas clinic ${[j]}</h6><p class="m-0"></button>`;
-    appointmenttab.html(appointmentarray[j] += appointmenttab.html());
-}
-
-
-for (var k = 10; k >= 0; k--) {
-    let alldoctorarray = [];
-    alldoctorarray[k] = `<button class="btn doctorsbtns m-1"><h6 class="m-0">Doctor ${[k]}</h6><p class="m-0"></button>`;
-    alldoctortab.html(alldoctorarray[k] += alldoctortab.html());
 }
 
 for (var l = 10; l >= 0; l--) {
@@ -103,10 +90,12 @@ var specialityvalue = [
     { id: 39, name: "Women&#039;s health" },
     { id: 40, name: "Nutrition &amp; Dietics" },
 ].reverse();
+
 for (var m = 0; m < specialityvalue.length; m++) {
     specialityvalue[m] = `<button class="btn specialitybtns m-1"><h6 class="m-0">${specialityvalue[m].name} [${specialityvalue[m].id}]</h6><p class="m-0"></button>`;
     specialitytab.html(specialityvalue[m] += specialitytab.html());
 }
+
 
 
 
@@ -124,9 +113,8 @@ function closeform() {
     if ($('.doctorinfosection').show()) {
         $('.doctorinfosection').hide()
     }
-    if ($('.card2').show()) {
-        $('.card2').hide()
-    }
+ 
+   
 }
 
 
@@ -176,17 +164,56 @@ $('#starttime').on('input', function () {
     $('#startbtn').attr('disabled', false);
 })
 
-
+var starttimeval=""
 $('#starttime').on('change',function(){
-    const starttimeval = this.value;
-    console.log(starttimeval);
+  
+    starttimeval = this.value;
+       console.log(starttimeval);
+       console.log(typeof(starttimeval));
 })
 
+var roomnumber = "";
 $('#clinicroom').on('change', function() {
-    const clinicroom = this.value;
-    console.log(clinicroom);
+    roomnumber = this.value;
+    console.log(roomnumber);
+    console.log(typeof(roomnumber));
   });
 
  function timeview1(){
     $('#starttime').attr('disabled',true);
+    $('#startbtn').attr('disabled', true);
  }
+
+
+
+
+ let timecard=[];
+ 
+ const timeobj={starttime:"",room:"",endtime:"",totalhours:""};
+
+ document.getElementById('addslotbutton').addEventListener('click',function(){
+    timecard.push(timeobj);
+    console.log(timecard.length);
+    console.log(starttime)
+    for(n=0;n<timecard.length;n++){
+        timecard[n].room=roomnumber;
+        timecard[n].starttimeval = starttime;
+        console.log(timecard[n].room)
+        console.log(timecard[n].starttime);
+        console.log(timecard[n]);
+    }
+ })
+
+function closeslot(){
+    if ($('.card1').show()) {
+        $('.card1').hide()
+    }
+}
+
+function onlyOne(checkbox) {
+    var checkboxes = document.getElementsByName('check')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}
+ 

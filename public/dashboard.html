@@ -171,21 +171,56 @@
           </form>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 col-12 appointmentinfosection border-start border-top border-2 position-absolute">
-          <h5 class="text-center mt-2">Appointment Details</h5>
+          <h5 class="text-center mt-2">New Appointment</h5>
           <button type="button" class="btn-close closebtn position-absolute" aria-label="Close" onclick="closeform()"></button>
           <hr>
           <form class="col-12">
-            <p class="m-0 mb-2">Select Clinic</p>
-            <div class="scroll appointmenttab col-12">
+            <label class="m-0 mb-2">Search Using Phone or Name</label>
+            <input type="text" class="form-control selectpatient col-10">
+            <p class="text-danger btn fs-6 p-0 m-0">Warning</p>
+            <div class="col-12 p-0">
+            <button class="Add User btn btn-sm done">Add User</button>
+            </div>
+            
+            <hr>
+            <label>Select Location</label>
+            <div class="col-12 form-control location scroll border-0" style="height:7rem;">
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
+              <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label>
+              </div>
+            
+            <hr>
+              <label>Select Doctor</label>
+              <div class="col-12">
+              <select class="col-10 form-control selectdoctor">
+                <option disabled selected>Select Doctor</option>
+                <option>Doctor 1</option>
+                <option>Doctor 2</option>
+                <option>Doctor 3</option>
+                <option>Doctor 4</option>
+                <option>Doctor 5</option>
+                <option>Doctor 6</option>
+                <option>Doctor 7</option>
+                <option>Doctor 8</option>
+                <option>Doctor 9</option>
+                <option>Doctor 10</option>
+          
+              </select>
+            </div>
+            <label class="mt-2">Select Date</label>
+            <div class="col-12">
+              <input type="date"class="form-control selectdate">
             </div>
             <hr>
-            <p class="m-0 mb-2">Select Doctor</p>
-            <div class="scroll alldoctortab col-12">
-            </div>
-            <hr>
+            
             <p class="m-0 mb-2">Select Time Slot</p>
             <div class="scroll timetab col-12">
             </div>
+            <button class="btn btn-sm done mt-3 ms-2"><img src="../src/images/addicon.png" class="mb-1 me-1"style="width:1.2rem"/>Time Slot</button>
             <hr>
             <div class="col-10 patientsearch m-auto">
               <label for="patientsearch">Select Patient</label>
@@ -630,22 +665,23 @@
                 </div>
               </div>
               <div class="col-6 ">
-               <div class="float-end pe-4 pt-4" id="livetime">
+               <div class="float-end position-fixed shadowsm" id="livetime">
                 </div>
               </div>
             </div>
           </div>
        
-        <div class="row gx-0">
-        <div class=" col-xl-3 col-lg-3 col-md-5 col-sm-6 col-10 ps-md-3 position-relative card1">
-          <div class="card">
+        <div class="row overflow-auto cardslots gx-0" id="cardslots">
+        <div class=" col-xl-3 col-lg-3 col-md-5 col-sm-6 col-10 ps-md-3 position-relative cardcss card1" id="card1">
+          <div class="card" id="card1format">
             <div class="card-body p-2">
+              <!-- <button type="button" class="btn-close closebtn float-end" aria-label="Close" onclick="closeslot()"></button> -->
               <div class="row">
                 <div class="col-8">
                   <h5 class="card-title fw-bolder text-center mt-1">Room Number</h5>
                 </div>
                 <div class="col-4">
-                  <select class="form-control bg-transparent border-0 " id="clinicroom">
+                  <select class="form-control bg-transparent border-0" id="clinicroom">
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -664,7 +700,7 @@
               <p class="card-text text-center mt-2">Start Time</p>
             </div>
             <div class="col-6">
-              <input type=time id="starttime" class="form-control bg-transparent border-0 text-center" value=""/>
+              <input type=time id="starttime" class="form-control bg-transparent border-0 text-center" value="00:00:00"/>
             </div>
           </div>
           <div class="row">
@@ -672,7 +708,7 @@
             <p class="card-text text-center mt-2">End Time</p>
           </div>
           <div class="col-6">
-            <input type=time id="endtime" class="form-control bg-transparent border-0" value="" />
+            <input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" />
           </div>
         </div>
         <div class="row">
@@ -680,7 +716,7 @@
           <p class="card-text text-center mt-2" >Total Hours</p>
         </div>
         <div class="col-6">
-          <input type="text" id="totalhrs" class="form-control bg-transparent border-0" value=""/>
+          <input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/>
         </div>
       </div>
       <div class="col-12">
@@ -693,8 +729,13 @@
             </div>
           </div>
         </div>
+        
+      
+   
       </div>
-  
+      <div class="col-1 d-flex justify-content-center align-items-center">
+        <button class="btn" id="addslotbutton"><img src="../src/images/addicon.png" style="width:3rem;"/></button>
+      </div>
         </div>
        
         <hr>
