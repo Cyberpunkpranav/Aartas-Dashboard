@@ -14,11 +14,11 @@ let timeslots = $('.timeslots');
 $('.addoptions').hide();
 $('.addbtn')[0].addEventListener('click', function () {
 
-    // if ($('.addoptions').hide(500)){
-    //     $('.addoptions').show(500)
-    //     $('.addoptions').css('width', '150%');
-    // }
-    $('.addoptions').toggle(500);
+    if ($('.addoptions').hide(500)){
+        $('.addoptions').show(500)
+        $('.addoptions').css('width', '150%');
+    }
+    // $('.addoptions').toggle(500);
 });
 
 $('.patientinfosection').hide();
@@ -27,6 +27,18 @@ $('.patient')[0].addEventListener('click', function () {
     $('.appointmentinfosection').hide();
     $('.doctorinfosection').hide();
     $('.addoptions').hide(500);
+
+    if($('.patientinfosection').slideToggle()){
+        $('body').click(function() {
+            if (!$(this.target).is('.patientinfosection')) {
+              $(".patientinfosection").hide();
+            }
+          }
+          
+          );
+        }
+
+
 })
 
 $('.appointmentinfosection').hide();
@@ -35,6 +47,19 @@ $('.appointment')[0].addEventListener('click', function () {
     $('.patientinfosection').hide();
     $('.doctorinfosection').hide();
     $('.addoptions').hide(500)
+
+
+    if($('.appointmentinfosection').slideToggle()){
+        $('body').click(function() {
+            if (!$(this.target).is('.appointmentinfosection')) {
+              $(".appointmentinfosection").hide();
+            }
+          }
+          
+          );
+        }
+
+
 })
 
 $('.doctorinfosection').hide();
@@ -42,7 +67,19 @@ $('.doctorslot')[0].addEventListener('click', function () {
     $('.doctorinfosection').slideToggle();
     $('.patientinfosection').hide();
     $('.appointmentinfosection').hide();
-    $('.addoptions').hide(500)
+    $('.addoptions').hide(500);
+
+    if($('.doctorinfosection').slideToggle()){
+        $('body').click(function() {
+            if (!$(this.target).is('.doctorinfosection')) {
+              $(".doctorinfosection").hide();
+            }
+          }
+          
+          );
+        }
+
+
 })
 
 
@@ -113,8 +150,7 @@ function closeform() {
     if ($('.doctorinfosection').show()) {
         $('.doctorinfosection').hide()
     }
- 
-   
+    
 }
 
 

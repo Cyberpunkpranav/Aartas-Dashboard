@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background: var(--seashell);
+    background: var(--pearl);
 
 }
 
