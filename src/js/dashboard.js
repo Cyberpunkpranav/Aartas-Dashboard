@@ -50,7 +50,7 @@ $('.doctorslot')[0].addEventListener('click', function () {
 })
 
 
-for (var i = 20; i >= 0; i--) {
+for (var i = 20; i >= 0; i--) { 
     let doctorarray = [];
     doctorarray[i] = `<button class="btn m-1"><h6 class="m-0">Doctors Name ${[i]}</h6><p class="m-0"></button>`;
     doctortab.html(doctorarray[i] += doctortab.html());
@@ -211,18 +211,24 @@ $('#clinicroom').on('change', function() {
     }
  })
 
-function closeslot(){
-    if ($('.card1').show()) {
-        $('.card1').hide()
-    }
-}
+ $(document).on('click','.closebtn',function(){
+ $(this).closest('.card1').remove();
+ })
 
+function closeslot(){
+  if ($('.card1').show()) {
+    $('.card1').hide()
+}
+}
 function onlyOne(checkbox) {
     var checkboxes = document.getElementsByName('check')
     checkboxes.forEach((item) => {
         if (item !== checkbox) item.checked = false
     })
 }
- $( function(){
-  $('#livetime').draggable();
- });
+
+
+ $('#livetime').on('mouseover',function(){
+  $(this).draggable();
+
+ })
