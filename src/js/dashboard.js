@@ -196,6 +196,9 @@ $('#clinicroom').on('change', function() {
  const timeobj={starttime:"",room:"",endtime:"",totalhours:""};
 
  document.getElementById('addslotbutton').addEventListener('click',function(){
+  $('#card1').clone().appendTo('#cardslots');
+
+
     timecard.push(timeobj);
     console.log(timecard.length);
     console.log(starttime)

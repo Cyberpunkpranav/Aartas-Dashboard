@@ -73,6 +73,7 @@ body::-webkit-scrollbar-thumb:hover {
     letter-spacing: 0.078rem;
     width: 90%;
     max-width:5rem;
+    min-width:4rem;
 }
 
 .navsection i {
@@ -361,7 +362,7 @@ font-family: 'Urbanist', sans-serif;
 .patientsection #livetime{
     font-weight: 800;
     font-size:1.2rem;
-   
+   z-index:2;
     background-color:var(--lightyellow);
 
 }
@@ -371,10 +372,10 @@ font-family: 'Urbanist', sans-serif;
 .patientsection .cardcss {
     max-width:18rem;
 }
-.patientsection .cardcss .card{
+.patientsection .card{
     background-color: var(--seashell);
 }
-.patientsection .cardcss .card-text{
+.patientsection .card .card-text{
     color:#22202388;
     font-weight: 800;
 }
@@ -396,9 +397,7 @@ font-family: 'Urbanist', sans-serif;
     border: 1px solid var(--burntumber);
     color:var(--burntumber);
 }
-.allappointmentsection .table{
-    overflow-x: scroll;
-}
+
 
 .allappointmentsection .table tr:nth-child(even){
     background-color:var(--lightyellow);
@@ -420,6 +419,11 @@ font-weight:800;
     background-color:var(--lightred);
     font-weight:800;
 }
+#cardslots{
+        height:min-content;
+        overflow-x: auto;
+        white-space: nowrap;
+}
 
 @media (max-width:992px) {
     .navsection .username {
@@ -439,10 +443,6 @@ font-weight:800;
         font-size: 1rem;
     }
 
-    /* .navsection .addoptions {
-        width: 20rem;
-        height:20rem;
-    } */
 
     .menu p {
         display: none;

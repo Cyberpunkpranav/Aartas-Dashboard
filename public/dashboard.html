@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 
 </head>
 
@@ -56,21 +56,21 @@
             </div>
             <div class="col-auto"><a href="#" class="text-decoration-none">
                 <div class="text-center"><a>
-                  <img src="../src/images/doctor.png" class="img-fluid" style="width:2.3rem;"/>
+                  <img src="../src/images/doctor.png" class="img-fluid" style="width:1.5rem;"/>
                     <p class="col-12 m-0">Doctors</p>
                 </div>
               </a>
             </div>
             <div class="col-auto"><a href="#" class="text-decoration-none">
                 <div class="text-center"><a>
-                    <img src="../src/images/dsr.png" class="img-fluid" style="width:2.3rem;"/>
+                    <img src="../src/images/dsr.png" class="img-fluid" style="width:1.5rem;"/>
                     <p class="col-12 m-0">DSR</p>
                 </div>
               </a>
             </div>
             <div class="col-auto"><a href="#" class="text-decoration-none">
                 <div class="text-center"><a>
-                  <img src="../src/images/pharmacy.png" class="img-fluid" style="width:2.3rem;"/>
+                  <img src="../src/images/pharmacy.png" class="img-fluid" style="width:1.5rem;"/>
                     <p class="col-12 m-0">Pharmacy</p>
                 </div>
               </a>
@@ -83,12 +83,12 @@
 
         <!--Add Button-->
 
-        <div class="col-lg-2 col-xl-1 col-md-2 col-6 col-sm-2 text-center position-relative">
+        <div class="col-lg-2 col-xl-1 col-md-1 col-6 col-sm-2 text-center position-relative">
           <button class="btn col-12 addbtn">+Add</button>
           <!--Add Button-->
 
           <!--Add Button Options-->
-          <div class=" text-center addoptions  position-absolute">
+          <div class=" text-center addoptions position-absolute">
             <input class="col-12 p-lg-2 border-1 border-bottom text-start patient" type="button"
               value="Patient">
             <input class="col-12 p-lg-2 text-start border-1 border-bottom appointment" type="button"
@@ -126,6 +126,7 @@
             <i class="fa fa-plus-circle" aria-hidden="true" style="color:#96351E;"></i>
           </button>
         </div>
+
         <div class="col-lg-5 col-md-6 col-sm-12 col-12 patientinfosection border-start border-top border-2 position-absolute">
        
             <h5 class="text-center mt-2 position-relative">Patient Details</h5>
@@ -321,10 +322,11 @@
               </div>
             </div>
           </div>
-       
-        <div class="row overflow-auto cardslots gx-0" id="cardslots">
-        <div class=" col-xl-3 col-lg-3 col-md-5 col-sm-6 col-10 ps-md-3 position-relative cardcss card1" id="card1">
-          <div class="card" id="card1format">
+    
+       <div class="row">
+        <div class="col-auto">
+        <div class="row" id="cardslots">
+        <div class="card m-2 col-xl-12 col-lg-3 col-md-5 col-sm-6 col-10 ps-md-3 cardcss card1" id="card1">
             <div class="card-body p-2">
               <!-- <button type="button" class="btn-close closebtn float-end" aria-label="Close" onclick="closeslot()"></button> -->
               <div class="row">
@@ -378,15 +380,15 @@
 
       </div>
             </div>
-          </div>
+     
         </div>
-        
-        <div class="col-1 d-flex justify-content-center align-items-center">
-          <button class="btn" id="addslotbutton"><img src="../src/images/addicon.png" style="width:3rem;"/></button>
-        </div>
-   
       </div>
-      
+  </div>
+  
+  <div class="col-1 d-flex justify-content-center align-items-center">
+    <button class="btn" id="addslotbutton"><img src="../src/images/addicon.png" style="width:3rem;"/></button>
+  </div>
+</div>
         </div>
        
         <hr>
@@ -394,7 +396,7 @@
           <div class="container-fluid ">
             <div class="row ps-md-3 align-items-center ">
               <div class=" col-12 p-0 m-0 align-items-center">
-                <div class="row">
+                <div class="d-flex">
                   <div class="col-auto">
                     <h4 class="p-0 m-0">Time slot avaliable</h4>
                   </div>
