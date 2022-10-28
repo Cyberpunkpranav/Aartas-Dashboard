@@ -14,52 +14,30 @@ let timeslots = $('.timeslots');
 $('.addoptions').hide();
 $('.addbtn')[0].addEventListener('click', function () {
 
-    if ($('.addoptions').hide(500)){
-        $('.addoptions').show(500)
-        $('.addoptions').css('width', '150%');
-    }
-    // $('.addoptions').toggle(500);
+    // if ($('.addoptions').hide(500)){
+    //     $('.addoptions').show(500)
+    //     $('.addoptions').css('width', '150%');
+    // }
+    $('.addoptions').toggle(500);
 });
 
-$('.patientinfosection').hide();
+
 $('.patient')[0].addEventListener('click', function () {
     $('.patientinfosection').slideToggle();
     $('.appointmentinfosection').hide();
     $('.doctorinfosection').hide();
     $('.addoptions').hide(500);
-
-    if($('.patientinfosection').slideToggle()){
-        $('body').click(function() {
-            if (!$(this.target).is('.patientinfosection')) {
-              $(".patientinfosection").hide();
-            }
-          }
-          
-          );
-        }
-
-
+    $('.parentclose').show();
 })
 
-$('.appointmentinfosection').hide();
+
+
 $('.appointment')[0].addEventListener('click', function () {
     $('.appointmentinfosection').slideToggle();
     $('.patientinfosection').hide();
     $('.doctorinfosection').hide();
-    $('.addoptions').hide(500)
-
-
-    if($('.appointmentinfosection').slideToggle()){
-        $('body').click(function() {
-            if (!$(this.target).is('.appointmentinfosection')) {
-              $(".appointmentinfosection").hide();
-            }
-          }
-          
-          );
-        }
-
-
+    $('.addoptions').hide(500);
+    $('.parentclose').show();
 })
 
 $('.doctorinfosection').hide();
@@ -68,20 +46,8 @@ $('.doctorslot')[0].addEventListener('click', function () {
     $('.patientinfosection').hide();
     $('.appointmentinfosection').hide();
     $('.addoptions').hide(500);
-
-    if($('.doctorinfosection').slideToggle()){
-        $('body').click(function() {
-            if (!$(this.target).is('.doctorinfosection')) {
-              $(".doctorinfosection").hide();
-            }
-          }
-          
-          );
-        }
-
-
+    $('.parentclose').show();
 })
-
 
 
 for (var i = 20; i >= 0; i--) {
@@ -143,14 +109,16 @@ function reset() {
 function closeform() {
     if ($('.patientinfosection').show()) {
         $('.patientinfosection').hide();
+        $('.parentclose').hide();
     }
     if ($('.appointmentinfosection').show()) {
         $('.appointmentinfosection').hide()
+        $('.parentclose').hide();
     }
     if ($('.doctorinfosection').show()) {
         $('.doctorinfosection').hide()
-    }
-    
+        $('.parentclose').hide();
+    }  
 }
 
 
