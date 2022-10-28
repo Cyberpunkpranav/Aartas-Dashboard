@@ -220,4 +220,6 @@ function onlyOne(checkbox) {
         if (item !== checkbox) item.checked = false
     })
 }
- 
+ $( function(){
+  $('#livetime').draggable();
+ });
