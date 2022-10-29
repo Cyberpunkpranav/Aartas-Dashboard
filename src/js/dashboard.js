@@ -8,7 +8,7 @@ let calender = $('#calender');
 let starttime = $('.starttime');
 let clinictime = document.getElementById('#clinictime');
 let timeslots = $('.timeslots');
-
+let cardslot=$('.cardslot');
 
 
 $('.addoptions').hide();
@@ -68,6 +68,19 @@ for (var m = 10; m >= 0; m--) {
     timeslotarray[m] = `<button class="btn timeslotbtns m-1"><h6 class="m-0">Time Slot ${[m]}</h6><p class="m-0"></button>`;
     timeslots.html(timeslotarray[m] += timeslots.html());
 }
+
+var timeslotincrease =3;
+let timecardarray = ['<div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:18rem;"><div class="card-body p-2"><button type="button" class="btn-close closebtn float-end" aria-label="Close"></button><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time id="starttime" class="form-control bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button class="btn btn-success col-5 startbtn" onclick="timeview1()">Start Time</button><button class="btn btn-danger col-5" id="endbtn" onclick="timeview2()">End Time</button></div></div></div></div>'];
+cardslot.html(timecardarray += cardslot.html());
+$(document).ready(function(){
+  document.getElementById('addslotbutton').addEventListener('click',function(){
+    // $('#card1').clone().appendTo('#cardslots');
+    console.log(timeslotincrease);
+      timecardarray.push('<div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:18rem;"><div class="card-body p-2"><button type="button" class="btn-close closebtn float-end" aria-label="Close"></button><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time id="starttime" class="form-control bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button class="btn btn-success col-5 startbtn" onclick="timeview1()">Start Time</button><button class="btn btn-danger col-5" id="endbtn" onclick="timeview2()">End Time</button></div></div></div></div>');
+    cardslot.html(timecardarray += cardslot.html());
+   })
+})
+
 
 var specialityvalue = [
     { id: 1, name: "Cardilogy" },
@@ -163,17 +176,9 @@ $(document).ready(function() {
     
   }
 
-$('#startbtn').attr('disabled', true);
-$('#starttime').on('input', function () {
-    $('#startbtn').attr('disabled', false);
-})
-
-var starttimeval=""
-$('#starttime').on('change',function(){
-  
-    starttimeval = this.value;
-       console.log(starttimeval);
-       console.log(typeof(starttimeval));
+$('.startbtn').attr('disabled', true);
+$('.starttime').on('input', function () {
+    $('.startbtn').attr('disabled', false);
 })
 
 var roomnumber = "";
@@ -191,35 +196,10 @@ $('#clinicroom').on('change', function() {
 
 
 
- let timecard=[];
- 
- const timeobj={starttime:"",room:"",endtime:"",totalhours:""};
-
- document.getElementById('addslotbutton').addEventListener('click',function(){
-  $('#card1').clone().appendTo('#cardslots');
-
-
-    timecard.push(timeobj);
-    console.log(timecard.length);
-    console.log(starttime)
-    for(n=0;n<timecard.length;n++){
-        timecard[n].room=roomnumber;
-        timecard[n].starttimeval = starttime;
-        console.log(timecard[n].room)
-        console.log(timecard[n].starttime);
-        console.log(timecard[n]);
-    }
- })
-
  $(document).on('click','.closebtn',function(){
  $(this).closest('.card1').remove();
  })
 
-function closeslot(){
-  if ($('.card1').show()) {
-    $('.card1').hide()
-}
-}
 function onlyOne(checkbox) {
     var checkboxes = document.getElementsByName('check')
     checkboxes.forEach((item) => {
@@ -240,3 +220,7 @@ if(isNaN(selectpatientinput) == false){
   $('.patientname').attr('value',selectpatientinput);
 }
  })
+ function formshift(){
+  $('.patientinfosection').show()
+  $('.appointmentinfosection').hide();
+ }

@@ -14,13 +14,14 @@
 </head>
 
 <body>
- 
+
   <button  class="parentclose position-absolute"onclick="closeform()"></button>
   <!-- Navbar-->
   <div class="navsection p-2">
 
     <div class="container-fluid ">
       <div class="row align-items-center justify-content-evenly">
+
         <!-- User card-->
         <div class="col-lg-2 col-xl-2 col-md-2 col-sm-2 col-6">
           <div class="col-md-12 col-12 user">
@@ -30,6 +31,7 @@
           </div>
         </div>
         <!-- User card-->
+
         <!--menu-->
         <div class="col-lg-6 col-xl-5 col-sm-auto col-md-auto col-10 p-2 m-0 menu order-1 order-xl-0 order-sm-0 order-md-0 order-sm-0">
           <div class="row align-items-center justify-content-around">
@@ -83,7 +85,6 @@
         <!--Add Button catalog-->
 
         <!--Add Button-->
-
         <div class="col-lg-2 col-xl-1 col-md-1 col-6 col-sm-2 text-center position-relative">
           <button class="btn col-12 addbtn">+Add</button>
           <!--Add Button-->
@@ -98,15 +99,15 @@
           </div>
           <!--Add Button Options-->
         </div>
-
         <!--Add Button catalog-->
+
         <!--Search-->
         <div class="col-10 col-lg-2 col-xl-2 col-md-3 col-sm-2 py-3  order-sm-2 order-2 Search position-relative">
           <article class='Search-box'>
-            <input type="text" class="Search-Text"  placeholder= "Type to search"/>
+            <input type="text" class="Search-Text"  placeholder= "search"/>
             <a class="Search-btn" href="#"><i class="fa fa-search" aria-hidden="true"style="color:#96351E;"></i></a>
           </article>
-        </div> 
+        </div>
         <!-- <div class="col-10 col-lg-2 col-xl-2 col-md-3 col-sm-2 search">
           <form class="d-flex position-relative ">
             <input class="form-control col-auto" type="search" placeholder="Search" aria-label="Search">
@@ -116,30 +117,30 @@
         </div>
      -->
         <!--Search-->
+
       </div>
     </div>
   </div>
   <!-- Navbar-->
-  <!-- <article class=Search-box>
-    <input class=Search-Text type="text" placeholder= "Type to search">
-    <a class="Search-btn" href="#">
-      <img src="Search.png" alt="Search Here"></img>
-  </a></article> -->
+
   <!--Userin-->
   <div class="container-fluid doctorcontainer">
     <section class="doctorsection ">
       <div class="row shadow-sm">
-
-        <div class="scroll col-xl-11 col-sm-10 col-lg-11 col-md-11 col-10 doctortab">
-        </div>
-        <div class="col-xl-1 col-lg-1 col-md-1 col-2  p-0 m-0 align-items-center">
-          <button class="btn">
+        <!-- col-xl-11 col-sm-10 col-lg-11 col-md-11 col-10 -->
+        <div class="scroll doctortab">
+          <button class="btn bg-transparent border-0">
             <i class="fa fa-plus-circle" aria-hidden="true" style="color:#96351E;"></i>
           </button>
         </div>
+        <!-- <div class="col-xl-1 col-lg-1 col-md-1 col-2 p-0 m-0 align-items-center">
+          <button class="btn">
+            <i class="fa fa-plus-circle" aria-hidden="true" style="color:#96351E;"></i>
+          </button>
+        </div> -->
 
         <div class="col-lg-5 col-md-6 col-sm-12 col-12 patientinfosection border-start border-top border-2 position-absolute">
-       
+
             <h5 class="text-center mt-2 position-relative">Patient Details</h5>
             <button type="button" class="btn-close closebtn position-absolute" aria-label="Close" onclick="closeform()"></button>
           <hr>
@@ -194,9 +195,9 @@
             <input type="text" class="form-control selectpatient col-10">
             <p class="text-danger btn fs-6 p-0 m-0">Warning</p>
             <div class="col-12 p-0">
-            <button class="Add User btn btn-sm done">Add User</button>
+            <button class="Add User btn btn-sm done" onclick="formshift()">Add User</button>
             </div>
-            
+
             <hr>
             <label>Select Location</label>
             <div class="col-12 form-control location scroll border-0" style="height:7rem;">
@@ -207,7 +208,7 @@
               <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label><br>
               <label><input type="checkbox" class="radio form me-1" name="check" onclick="onlyOne(this)" value="18A Ring Road, Lajpat Nagar"/>18A Ring Road, Lajpat Nagar</label>
               </div>
-            
+
             <hr>
               <label>Select Doctor</label>
               <div class="col-12">
@@ -223,7 +224,7 @@
                 <option>Doctor 8</option>
                 <option>Doctor 9</option>
                 <option>Doctor 10</option>
-          
+
               </select>
             </div>
             <label class="mt-2">Select Date</label>
@@ -231,7 +232,7 @@
               <input type="date"class="form-control selectdate">
             </div>
             <hr>
-            
+
             <p class="m-0 mb-2">Select Time Slot</p>
             <div class="scroll timetab col-12">
             </div>
@@ -328,80 +329,18 @@
                 </div>
               </div>
               <div class="col-6 ">
-               <div class="p-1 DraggableDiv" id="livetime">
-                </div>
+                <div class="p-1 DraggableDiv" id="livetime">
+                 </div>
+               </div>
+            </div>
+          </div>
+            <div class="container-fluid scroll">
+              <div class="cardslot d-inline-flex">
+                <button class="btn" id="addslotbutton"><img src="../src/images/addicon.png" style="width:3rem;"/></button>
               </div>
             </div>
-          </div>
-    
-       <div class="row">
-        <div class="col-auto">
-        <div class="row" id="cardslots">
-        <div class="card m-2 col-10 ps-md-3 cardcss card1" id="card1">
-            <div class="card-body p-2">
-              <button type="button" class="btn-close closebtn float-end" aria-label="Close"></button>
-              <div class="row">
-                <div class="col-8">
-                  <h5 class="card-title fw-bolder text-center mt-1">Room Number</h5>
-                </div>
-                <div class="col-4">
-                  <select class="form-control bg-transparent border-0" id="clinicroom">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-6">
-              <p class="card-text text-center mt-2">Start Time</p>
-            </div>
-            <div class="col-6">
-              <input type=time id="starttime" class="form-control bg-transparent border-0 text-center" value="00:00:00"/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-            <p class="card-text text-center mt-2">End Time</p>
-          </div>
-          <div class="col-6">
-            <input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-          <p class="card-text text-center mt-2" >Total Hours</p>
-        </div>
-        <div class="col-6">
-          <input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="row justify-content-around">        
-          <button class="btn btn-success col-5" id="startbtn" onclick="timeview1()">Start Time</button>
-          <button class="btn btn-danger col-5" id="endbtn" onclick="timeview2()">End Time</button>
-        </div>
 
-      </div>
-            </div>
-     
-        </div>
-      </div>
-  </div>
-  
-  <div class="col-1 d-flex justify-content-center align-items-center">
-    <button class="btn" id="addslotbutton"><img src="../src/images/addicon.png" style="width:3rem;"/></button>
-  </div>
-</div>
-        </div>
-       
+
         <hr>
         <section class="timeslotsection">
           <div class="container-fluid ">
@@ -411,24 +350,24 @@
                   <div class="col-auto">
                     <h4 class="p-0 m-0">Time slot avaliable</h4>
                   </div>
-                  <div class="col-2">
+                  <div class="col-2 ms-2">
                     <button class="btn m-0 p-0">
-                      <i class="fa fa-plus-circle mt-1" aria-hidden="true" style="color:#222023b4;"></i></button> 
+                      <i class="fa fa-plus-circle mt-1" aria-hidden="true" style="color:#222023b4;"></i></button>
                   </div>
-                            
+
               </div>
             </div>
           </div>
             <div class="scroll timeslots col-12">
             </div>
-          
+
           <hr>
         </div>
         </section>
 
         <section class="allappointmentsection">
           <div class="container-fluid">
-      <div class="scroll">
+          <div class="scroll">
             <table class="table text-center">
               <thead>
                 <tr>
