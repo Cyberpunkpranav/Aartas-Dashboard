@@ -222,5 +222,3 @@
   }
 })(jQuery);
 
-
-$('.DraggableDiv').draggableTouch();

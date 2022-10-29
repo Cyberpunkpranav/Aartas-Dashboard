@@ -228,21 +228,12 @@ function onlyOne(checkbox) {
 }
 
 
-//  $('#livetime').on('onmouseup',function(){
-//   console.log('dragabble')
-//   $(this).draggable();
-//   console.log($(this).draggable());
-
-//  })
+ $('#livetime').on('click',function(){
+  $(this).draggable();
+ })
 
 
-//  .touch({
-//   animate:false,
-//   sticky:false,
-//   dragx:true,
-//   dragy:true,
-//   rotate:false,
-//   resort:true,
-//   scale:false
-//   })
-
+ $('#livetime').on('mouseup',function(){
+console.log('drag')
+  $('.DraggableDiv').draggableTouch();
+})
