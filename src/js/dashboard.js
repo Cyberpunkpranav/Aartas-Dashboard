@@ -228,7 +228,21 @@ function onlyOne(checkbox) {
 }
 
 
- $('#livetime').on('mouseover',function(){
-  $(this).draggable();
+//  $('#livetime').on('onmouseup',function(){
+//   console.log('dragabble')
+//   $(this).draggable();
+//   console.log($(this).draggable());
 
- })
+//  })
+
+
+//  .touch({
+//   animate:false,
+//   sticky:false,
+//   dragx:true,
+//   dragy:true,
+//   rotate:false,
+//   resort:true,
+//   scale:false
+//   })
+
