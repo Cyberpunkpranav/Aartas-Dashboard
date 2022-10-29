@@ -7,8 +7,8 @@ html {
 .DraggableDiv {
     /* to allow the draggable div's to scroll with the content make the position absolute */
     position: fixed;
-    top: 30%;
-    left: 20%;
+    top:95%;
+    left:95%;
     background: #beccf3;
     box-shadow: 5px 5px 3px 0px rgba(97,97,97,0.5);
 }

@@ -233,7 +233,3 @@ function onlyOne(checkbox) {
  })
 
 
- $('#livetime').on('mouseup',function(){
-console.log('drag')
-  $('.DraggableDiv').draggableTouch();
-})
