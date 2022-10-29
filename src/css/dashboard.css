@@ -7,10 +7,8 @@ html {
 .DraggableDiv {
     /* to allow the draggable div's to scroll with the content make the position absolute */
     position: fixed;
-    top:95%;
-    left:95%;
-    background: #beccf3;
-    box-shadow: 5px 5px 3px 0px rgba(97,97,97,0.5);
+    top:0;
+    left:0;
 }
  
 .DraggableDiv div {
@@ -390,7 +388,6 @@ font-family: 'Urbanist', sans-serif;
     font-weight: 800;
     font-size:1.2rem;
    z-index:2;
-    background-color:var(--lightyellow);
 
 
 }
