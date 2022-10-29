@@ -29,6 +29,53 @@ html {
     left: 25%;
 }
 /*----------------------draggable css--------------------------------------------------*/
+
+/*----------------------search animation css--------------------------------------------------*/
+.Search-box {
+    position: absolute;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background:var(--seashell);
+    height: 2rem;
+    border-radius:1rem;
+    color:var(--charcoal);
+    transition: all 0.4s;
+    width:0%;
+    padding:2%;
+  }
+  .Search-box:hover > .Search-Text {
+    width: 80%;
+  }
+.Search-box:hover{
+    width:90%;
+    background:var(--pearl);
+}
+  .Search-btn {
+    color: transparent;
+    float: right;
+
+    margin:0;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+
+  }
+  .Search-Text {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding:0px;
+    color:var(--charcoal);
+    font-size: 1rem;
+    transition: all 0.4s;
+    width: 0px;
+    transition: all 0.4s;
+  }
+  /*----------------------search animation css--------------------------------------------------*/
 :root {
     --burntumber: #96351E;
     --brandy: #DBB98F;
@@ -63,7 +110,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .scroll::-webkit-scrollbar {
-    height: 0.7rem;
+    height: 0.4rem;
 }
 
 .scroll::-webkit-scrollbar-track {
@@ -85,6 +132,7 @@ body::-webkit-scrollbar-thumb:hover {
 .navsection {
     background-color: var(--seashell);
     font-family: 'Urbanist', sans-serif;
+    box-shadow: 0px 1px 6px 0px black;
 }
 
 .navsection .menu p {
@@ -104,7 +152,9 @@ body::-webkit-scrollbar-thumb:hover {
 .navsection i {
     font-size: 150%;
 }
-
+.doctorsection{
+    background-color: var(--seashell);
+}
 .doctorsection i {
     font-size: 200%;
 }
@@ -187,7 +237,10 @@ border:1px solid var(--pearl)
 .menu .col-auto:hover {
     background-color: var(--pearl);
 }
-
+.doctorcontainer{
+    background-color: var(--seashell);
+    margin-top:0.25rem;
+}
 .doctorsection {
     font-family: 'Urbanist', sans-serif;
 

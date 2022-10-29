@@ -232,4 +232,11 @@ function onlyOne(checkbox) {
   $(this).draggable();
  })
 
-
+ $('.selectpatient').on('input',function(){
+  var selectpatientinput = this.value;
+if(isNaN(selectpatientinput) == false){
+  $('.patientnumber').attr('value',selectpatientinput);
+}else{
+  $('.patientname').attr('value',selectpatientinput);
+}
+ })

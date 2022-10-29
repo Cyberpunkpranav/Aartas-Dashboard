@@ -17,7 +17,7 @@
  
   <button  class="parentclose position-absolute"onclick="closeform()"></button>
   <!-- Navbar-->
-  <div class="navsection p-2 shadow-sm">
+  <div class="navsection p-2">
 
     <div class="container-fluid ">
       <div class="row align-items-center justify-content-evenly">
@@ -31,9 +31,9 @@
         </div>
         <!-- User card-->
         <!--menu-->
-        <div class="col-lg-6 col-xl-5 col-sm-auto col-md-auto p-2 m-0 menu order-1 order-xl-0 order-sm-0 order-md-0 order-sm-0">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-auto "><a href="#" class="text-decoration-none">
+        <div class="col-lg-6 col-xl-5 col-sm-auto col-md-auto col-10 p-2 m-0 menu order-1 order-xl-0 order-sm-0 order-md-0 order-sm-0">
+          <div class="row align-items-center justify-content-around">
+            <div class="col-auto"><a href="#" class="text-decoration-none">
                 <div class="text-center"><a>
                     <i class="fa fa-calendar-plus-o" style="color:#96351E;"></i>
                     <p class="col-12 m-0">Today</p>
@@ -101,22 +101,32 @@
 
         <!--Add Button catalog-->
         <!--Search-->
-
-        <div class="col-10 col-lg-2 col-xl-2 col-md-3 col-sm-2 search">
+        <div class="col-10 col-lg-2 col-xl-2 col-md-3 col-sm-2 py-3  order-sm-2 order-2 Search position-relative">
+          <article class='Search-box'>
+            <input type="text" class="Search-Text"  placeholder= "Type to search"/>
+            <a class="Search-btn" href="#"><i class="fa fa-search" aria-hidden="true"style="color:#96351E;"></i></a>
+          </article>
+        </div> 
+        <!-- <div class="col-10 col-lg-2 col-xl-2 col-md-3 col-sm-2 search">
           <form class="d-flex position-relative ">
             <input class="form-control col-auto" type="search" placeholder="Search" aria-label="Search">
             <button class="searchbtn rounded btn-sm m-0 position-absolute" type="submit"><i class="fa fa-search"
                 aria-hidden="true"></i></button>
           </form>
         </div>
+     -->
         <!--Search-->
       </div>
     </div>
   </div>
   <!-- Navbar-->
-
+  <!-- <article class=Search-box>
+    <input class=Search-Text type="text" placeholder= "Type to search">
+    <a class="Search-btn" href="#">
+      <img src="Search.png" alt="Search Here"></img>
+  </a></article> -->
   <!--Userin-->
-  <div class="container-fluid">
+  <div class="container-fluid doctorcontainer">
     <section class="doctorsection ">
       <div class="row shadow-sm">
 
@@ -136,10 +146,10 @@
           <form class="col-12">
             <div class="form-group col-10 m-auto py-3">
               <label for="inputEmail4" class="mb-2">Primary Phone Number</label>
-              <input type="number" max="10" min="10" class="form-control m-auto" id="inputEmail4"
+              <input type="number" max="10" min="10" class="form-control patientnumber m-auto" id="inputEmail4"
                 placeholder="Phone Number" required>
               <label for="inputEmail4" class="pt-3 mb-2">Enter Name</label>
-              <input type="text" maxlength="50" class="form-control m-auto" placeholder="Enter FirstName and LastName" required>
+              <input type="text" maxlength="50" class="form-control m-auto patientname" placeholder="Enter FirstName and LastName" required>
             </div>
             <hr>
             <div class="col-10  m-auto form-group">
