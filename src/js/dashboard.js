@@ -13,11 +13,6 @@ let cardslot=$('.cardslot');
 
 $('.addoptions').hide();
 $('.addbtn')[0].addEventListener('click', function () {
-
-    // if ($('.addoptions').hide(500)){
-    //     $('.addoptions').show(500)
-    //     $('.addoptions').css('width', '150%');
-    // }
     $('.addoptions').toggle(500);
 });
 
@@ -49,8 +44,14 @@ $('.doctorslot')[0].addEventListener('click', function () {
     $('.parentclose').show();
 })
 
-
-for (var i = 20; i >= 0; i--) { 
+var adddoctorslotinarray = 1;
+$('#adddoctorbtn').on('click',function(){
+  adddoctorslotinarray+1;
+  console.log(adddoctorslotinarray);
+  console.log('clicked');
+})
+for (var i = adddoctorslotinarray; i >= 0; i--) { 
+  console.log(adddoctorslotinarray);
     let doctorarray = [];
     doctorarray[i] = `<button class="btn m-1"><h6 class="m-0">Doctors Name ${[i]}</h6><p class="m-0"></button>`;
     doctortab.html(doctorarray[i] += doctortab.html());
@@ -69,31 +70,14 @@ for (var m = 10; m >= 0; m--) {
     timeslots.html(timeslotarray[m] += timeslots.html());
 }
 
+$(document).ready( function(){
+  document.getElementById('addslotbutton').addEventListener('click',function(){
+    cardslot.append('<div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:20rem;"><div class="card-body p-2"><button type="button" class="btn-close closebtn float-end" aria-label="Close"></button><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time class="form-control starttime bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button disabled class="btn btn-success col-5 startbtn">Start Time</button><button class="btn btn-danger col-5" id="endbtn">End Time</button></div></div></div></div>');
 
+   })
+  })
+ 
 
-
-  var timecardarray = ['<div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:18rem;"><div class="card-body p-2"><button type="button" class="btn-close closebtn float-end" aria-label="Close"></button><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time id="starttime" class="form-control bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button class="btn btn-success col-5 startbtn" onclick="timeview1()">Start Time</button><button class="btn btn-danger col-5" id="endbtn" onclick="timeview2()">End Time</button></div></div></div></div>'];
-cardslot.html(timecardarray);
-console.log(timecardarray);
-// timecardarray.push();
-
-// cardslot.html(timecardarray += cardslot.html());
-
-// console.log(timecardarray);
-//   document.getElementById('addslotbutton').addEventListener('click',function(){
-//     // $('#card1').clone().appendTo('#cardslots');
-//     console.log(timecardarray);
-//     cardslot.html(timecardarray += cardslot.html());
-//    })
-
-  //  var hotelName = [];    
-   $('#addslotbutton').on('click', function(e){
-       e.preventDefault();        
-       timecardarray.push( $(this).data('<div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:18rem;"><div class="card-body p-2"><button type="button" class="btn-close closebtn float-end" aria-label="Close"></button><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time id="starttime" class="form-control bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button class="btn btn-success col-5 startbtn" onclick="timeview1()">Start Time</button><button class="btn btn-danger col-5" id="endbtn" onclick="timeview2()">End Time</button></div></div></div></div>'));
-       console.log(timecardarray.length);
-       cardslot.html(timecardarray + cardslot.html());
-       console.log(timecardarray);
-   });
 var specialityvalue = [
     { id: 1, name: "Cardilogy" },
     { id: 2, name: "Internal Medicine" },
@@ -123,8 +107,6 @@ for (var m = 0; m < specialityvalue.length; m++) {
     specialityvalue[m] = `<button class="btn specialitybtns m-1"><h6 class="m-0">${specialityvalue[m].name} [${specialityvalue[m].id}]</h6><p class="m-0"></button>`;
     specialitytab.html(specialityvalue[m] += specialitytab.html());
 }
-
-
 
 
 function reset() {
@@ -188,24 +170,20 @@ $(document).ready(function() {
     
   }
 
-$('.startbtn').attr('disabled', true);
-$('.starttime').on('input', function () {
-    $('.startbtn').attr('disabled', false);
-})
+
+//   $(document).on('input', function () {
+//    this.closest('.startbtn').attr('disabled', false);
+// })
 
 var roomnumber = "";
 $('#clinicroom').on('change', function() {
     roomnumber = this.value;
-    console.log(roomnumber);
-    console.log(typeof(roomnumber));
   });
 
- function timeview1(){
-    $('#starttime').attr('disabled',true);
-    $('#startbtn').attr('disabled', true);
- }
-
-
+$(document).on('click','.startbtn',function(){
+  $(this).closest('.startbtn').attr('disabled', true);
+  $(this).closest('.starttime').attr('disabled', true);
+})
 
 
  $(document).on('click','.closebtn',function(){
@@ -232,6 +210,8 @@ if(isNaN(selectpatientinput) == false){
   $('.patientname').attr('value',selectpatientinput);
 }
  })
+
+
  function formshift(){
   $('.patientinfosection').show()
   $('.appointmentinfosection').hide();

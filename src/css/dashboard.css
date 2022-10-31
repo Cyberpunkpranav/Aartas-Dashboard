@@ -76,6 +76,9 @@ body::-webkit-scrollbar-thumb:hover {
     max-width:5rem;
     min-width:4rem;
 }
+.navsection .addbtn:hover{
+    border:1px solid var(--burntumber);
+}
 .navsection i {
     font-size: 150%;
 }
@@ -159,6 +162,9 @@ border:1px solid var(--pearl)
     background-color: var(--burntumber);
     color: var(--pearl);
 }
+
+
+
 /*----------------------draggable css--------------------------------------------------*/
 .DraggableDiv {
     /* to allow the draggable div's to scroll with the content make the position absolute */
@@ -236,6 +242,20 @@ border:1px solid var(--pearl)
     background-color: var(--pearl);
     border-radius:10%;
     cursor: pointer;
+
+}
+.menu .col-auto p::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background:var(--burntumber);
+    transition: width .3s;
+    
+}
+.menu .col-auto:hover p::after {
+    width: 100%;
+    transition: width .3s;
 }
 .doctorcontainer{
     background-color: var(--seashell);

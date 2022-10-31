@@ -4,15 +4,15 @@
 //     url: 'https://aartas-qaapp-as.azurewebsites.net/aartas_uat/public/api/doctors',
 //     type: "GET",
 //     // crossDomain:true,
-//     // dataType:'jsonp',
-//     headers: {  'Access-Control-Allow-Origin': 'https://aartas-qaapp-as.azurewebsites.net/aartas_uat/public/api/doctors'},
-//     data: {
-//     },
+//     dataType:'jsonp',
+//     // headers: {  'Access-Control-Allow-Origin': * },
+//     // data: {
+//     // },
 //     success: function(data) {
 //      console.log(data);
 //     },
 //     error: function(data) {
-//         alert("Something went wrong please try again");
+//         alert("Something went wrong please try again"+ data);
 //     }
 // });
 
