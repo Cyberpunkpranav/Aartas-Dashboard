@@ -202,7 +202,7 @@ border:1px solid var(--pearl)
     border-radius:1rem;
     color:var(--charcoal);
     transition: all 0.4s;
-    width:10%;
+    width:15%;
     padding:2%;
   }
   .Search-box:hover > .Search-Text {

@@ -51,7 +51,7 @@ $('#adddoctorbtn').on('click',function(){
   console.log('clicked');
 })
 for (var i = adddoctorslotinarray; i >= 0; i--) { 
-  console.log(adddoctorslotinarray);
+
     let doctorarray = [];
     doctorarray[i] = `<button class="btn m-1"><h6 class="m-0">Doctors Name ${[i]}</h6><p class="m-0"></button>`;
     doctortab.html(doctorarray[i] += doctortab.html());
@@ -70,12 +70,12 @@ for (var m = 10; m >= 0; m--) {
     timeslots.html(timeslotarray[m] += timeslots.html());
 }
 
-$(document).ready( function(){
-  document.getElementById('addslotbutton').addEventListener('click',function(){
-    cardslot.append('<div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:20rem;"><div class="card-body p-2"><button type="button" class="btn-close closebtn float-end" aria-label="Close"></button><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time class="form-control starttime bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button disabled class="btn btn-success col-5 startbtn">Start Time</button><button class="btn btn-danger col-5" id="endbtn">End Time</button></div></div></div></div>');
-
-   })
-  })
+// $(document).ready( function(){
+//   document.getElementById('addslotbutton').addEventListener('click',function(){
+//     cardslot.append('<div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:20rem;"><div class="card-body p-2"><button type="button" class="btn-close closebtn float-end" aria-label="Close"></button><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time class="form-control starttime bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button disabled class="btn btn-success col-5 startbtn">Start Time</button><button class="btn btn-danger col-5" id="endbtn">End Time</button></div></div></div></div>');
+//     console.log(cardslot.html());
+//   })
+//   })
  
 
 var specialityvalue = [
@@ -178,6 +178,7 @@ $(document).ready(function() {
 var roomnumber = "";
 $('#clinicroom').on('change', function() {
     roomnumber = this.value;
+    console.log(roomnumber);
   });
 
 $(document).on('click','.startbtn',function(){
