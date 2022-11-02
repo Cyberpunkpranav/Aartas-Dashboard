@@ -271,15 +271,15 @@ border:1px solid var(--pearl)
 }
 
 .doctorsection .doctortab .btn {
-    background-color: var(--burntumber);
-    color: var(--pearl);
-    border: 1px solid var(--pearl);
+    color: var(--burntumber);
+    border: 1px solid var(--burntumber);
 }
 
-.doctorsection .doctortab .btn:hover {
-    background-color: var(--pearl);
-    color: var(--charcoal);
-    border: 1px solid var(--charcoal);
+.doctorsection .doctortab .btn:focus {
+    background-color: var(--burntumber);
+    color: var(--pearl);
+    border: 1px solid var(--burntumber);
+    box-shadow:0px 1px 5px 1px var(--charcoal);
 }
 
 .appointmenttab {
@@ -479,6 +479,7 @@ font-weight:800;
 .allappointmentsection .status_pending{
     background-color:var(--lightred);
     font-weight:800;
+  
 }
 
 

@@ -128,8 +128,9 @@
     <section class="doctorsection ">
       <div class="row shadow-sm">
         <!-- col-xl-11 col-sm-10 col-lg-11 col-md-11 col-10 -->
-        <div class="scroll doctortab">
-          <button class="btn bg-transparent border-0" id="adddoctorbtn">
+        <div class="d-flex scroll doctortab">
+          <div id="doctortab"></div>
+          <button class="btn bg-transparent border-0 d-inline-flex" id="adddoctorbtn">
             <i class="fa fa-plus-circle" aria-hidden="true" style="color:#96351E;"></i>
           </button>
         </div>
@@ -334,6 +335,7 @@
                </div>
             </div>
           </div>
+          <section id="doctorscheduledata">
             <div class="container-fluid scroll d-flex">
               <div class="cardslot d-inline-flex">
             <div class="card m-2 ps-md-3 cardcss card1" id="card1"style="min-width:20rem;"><div class="card-body p-2"><div class="row"><div class="col-8"><h5 class="card-title fw-bolder text-center mt-1">Room Number</h5></div><div class="col-4"><select class="form-control bg-transparent border-0" id="clinicroom"><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option></select></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">Start Time</p></div><div class="col-6"><input type=time class="form-control starttime bg-transparent border-0 text-center" value="00:00:00"/></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2">End Time</p></div><div class="col-6"><input type=time id="endtime" class="form-control bg-transparent border-0" value="00:00:00" /></div></div><div class="row"><div class="col-6"><p class="card-text text-center mt-2" >Total Hours</p></div><div class="col-6"><input type="text" id="totalhrs" class="form-control bg-transparent border-0 text-center" value="00"/></div></div><div class="col-12"><div class="row justify-content-around"><button disabled class="btn btn-success col-5 startbtn">Start Time</button><button class="btn btn-danger col-5" id="endbtn">End Time</button></div></div></div></div>
@@ -344,6 +346,7 @@
 
 
         <hr>
+     
         <section class="timeslotsection">
           <div class="container-fluid ">
             <div class="row ps-md-3 align-items-center ">
@@ -457,6 +460,7 @@
           </div>
           </div>
         </section>
+      </section>
       </section>
 
   <script src="https://kit.fontawesome.com/083c547933.js" crossorigin="anonymous"></script>

@@ -1,3 +1,5 @@
+
+
 let doctortab = $('.doctortab');
 let alldoctortab = $('.alldoctortab');
 let appointmenttab = $('.appointmenttab');
@@ -43,19 +45,42 @@ $('.doctorslot')[0].addEventListener('click', function () {
     $('.addoptions').hide(500);
     $('.parentclose').show();
 })
+//------------------------------doctor name API----------------------------------------------------------
 
-var adddoctorslotinarray = 1;
-$('#adddoctorbtn').on('click',function(){
-  adddoctorslotinarray+1;
-  console.log(adddoctorslotinarray);
-  console.log('clicked');
+  $.ajax({ 
+    url: 'https://aartas-qaapp-as.azurewebsites.net/aartas_uat/public/api/doctors',
+    type: "GET",
+    dataType:'JSON',
+    cors:true,
+    contentType:'application/json',
+    secure: true,
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+    },
+    data:JSON.stringify({ }),
+    success:function(data) {
+    //  console.log(JSON.stringify(data));
+  
+     for (var i=0 ; i<=data.data.length; i++) { 
+      doctorsName = data.data[i].doctor_name;
+        $('#doctortab').append(`<button class="btn m-1 doctorbutton" value='${doctorsName}'><h6 class="m-0">${doctorsName}</h6><p class="m-0"></button>`);
+      // console.log($(`.doctorbutton${i}`).attr('value'));
+    }
+    },    
+    error: function(data) {
+        alert("Something went wrong please try again");
+    }
 })
-for (var i = adddoctorslotinarray; i >= 0; i--) { 
 
-    let doctorarray = [];
-    doctorarray[i] = `<button class="btn m-1"><h6 class="m-0">Doctors Name ${[i]}</h6><p class="m-0"></button>`;
-    doctortab.html(doctorarray[i] += doctortab.html());
-}
+//------------------------------doctor name API----------------------------------------------------------
+
+// var adddoctorslotinarray = 1;
+// for (var i = adddoctorslotinarray; i >= 0; i--) { 
+
+//     let doctorarray = [];
+//     doctorarray[i] = `<button class="btn m-1"><h6 class="m-0">Doctors Name ${[i]}</h6><p class="m-0"></button>`;
+//     doctortab.html(doctorarray[i] += doctortab.html());
+// }
 
 for (var l = 10; l >= 0; l--) {
     let timearray = [];
@@ -217,3 +242,11 @@ if(isNaN(selectpatientinput) == false){
   $('.patientinfosection').show()
   $('.appointmentinfosection').hide();
  }
+ function displayschedule(){
+  alert(this.value);
+ }
+
+ $(document).on('click',`.doctorbutton`,function(){
+console.log($(this).attr('value'));
+$('#doctorscheduledata').show();
+  })
