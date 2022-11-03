@@ -373,7 +373,7 @@
         <section class="allappointmentsection">
           <div class="container-fluid">
           <div class="scroll">
-            <table class="table text-center">
+            <table class="table datatable text-center">
               <thead>
                 <tr>
                   <th>Action</th>
@@ -390,11 +390,21 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">
-                  <img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></th>
-                  <td><button class="btn btn-sm status_confirmed">Confirmed</button></td>
+                <th scope="row">
+                 <button class="btn bg-transparent confirmed position-relative m-0 p-0">
+                  <img src="../src/images/confirmed.png" class="img-fluid" style="width:1.5rem;"/></button>
+             
+                    <table class="table p-2 actionoptions optionconfirmed text-start rounded position-absolute" style="width:min-content;">
+                     <tr class="bg-transparent"><td>Action 1</td></tr>
+                     <tr class="bg-transparent"><td>Action 2</td></tr>
+                     <tr class="bg-transparent"><td>Action 3</td></tr> 
+                    </table>
+               
+                </th>
+                  
+                 <td><button class="btn btn-sm status_confirmed">Confirmed</button></td>
                   <td>Kabir Sharma</td>
-                  <td>9999910000</td>
+                  <td>9999910003</td>
                   <td>10:00 AM</td>
                   <td>1500</td>
                   <td><button class="ms-1 btn btn-sm status_completed">Done</button></td>
@@ -404,7 +414,17 @@
                   <td><img src="../src/images/more.png" style="width:1.5rem;"/></td>
                 </tr>
                 <tr>
-                  <th scope="row"><img src="../src/images/Vitalsdone.png" class="img-fluid" style="width:1.5rem;"/></th>
+
+                  <th scope="row">
+                    <button class="btn bg-transparent vitaldone position-relative m-0 p-0">
+                      <img src="../src/images/Vitalsdone.png" class="img-fluid" style="width:1.5rem;"/>
+                    </button>
+                    <table class="table p-2 actionoptions text-start rounded position-absolute optionvitaldone" style="width:min-content;">
+                      <tr class="bg-transparent"><td>Action 1</td></tr>
+                      <tr class="bg-transparent"><td>Action 2</td></tr>
+                      <tr class="bg-transparent"><td>Action 3</td></tr>
+                     </table>
+                  </th>
                   <td><button class="btn btn-sm status_vitalsdone">Vital Done</button></td>
                   <td>Kabir Sharma</td>
                   <td>9999910001</td>
@@ -471,6 +491,7 @@
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script src="../src/js/feature.js"></script>
   <script src="../src/js/timecard.js"></script>
+  <script src="../src/js/button.js"></script>
 </body>
 
 </html>

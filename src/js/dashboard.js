@@ -10,66 +10,65 @@ let calender = $('#calender');
 let starttime = $('.starttime');
 let clinictime = document.getElementById('#clinictime');
 let timeslots = $('.timeslots');
-let cardslot=$('.cardslot');
+let cardslot = $('.cardslot');
 
 
 $('.addoptions').hide();
 $('.addbtn')[0].addEventListener('click', function () {
-    $('.addoptions').toggle(500);
+  $('.addoptions').toggle(500);
 });
 
 
 $('.patient')[0].addEventListener('click', function () {
-    $('.patientinfosection').slideToggle();
-    $('.appointmentinfosection').hide();
-    $('.doctorinfosection').hide();
-    $('.addoptions').hide(500);
-    $('.parentclose').show();
+  $('.patientinfosection').slideToggle();
+  $('.appointmentinfosection').hide();
+  $('.doctorinfosection').hide();
+  $('.addoptions').hide(500);
+  $('.parentclose').show();
 })
 
 
 
 $('.appointment')[0].addEventListener('click', function () {
-    $('.appointmentinfosection').slideToggle();
-    $('.patientinfosection').hide();
-    $('.doctorinfosection').hide();
-    $('.addoptions').hide(500);
-    $('.parentclose').show();
+  $('.appointmentinfosection').slideToggle();
+  $('.patientinfosection').hide();
+  $('.doctorinfosection').hide();
+  $('.addoptions').hide(500);
+  $('.parentclose').show();
 })
 
 $('.doctorinfosection').hide();
 $('.doctorslot')[0].addEventListener('click', function () {
-    $('.doctorinfosection').slideToggle();
-    $('.patientinfosection').hide();
-    $('.appointmentinfosection').hide();
-    $('.addoptions').hide(500);
-    $('.parentclose').show();
+  $('.doctorinfosection').slideToggle();
+  $('.patientinfosection').hide();
+  $('.appointmentinfosection').hide();
+  $('.addoptions').hide(500);
+  $('.parentclose').show();
 })
 //------------------------------doctor name API----------------------------------------------------------
 
   $.ajax({ 
     url: 'https://aartas-qaapp-as.azurewebsites.net/aartas_uat/public/api/doctors',
     type: "GET",
-    dataType:'JSON',
+    dataType:'json',
     cors:true,
     contentType:'application/json',
     secure: true,
-    headers: {
-        'Access-Control-Allow-Origin': '*',
-    },
     data:JSON.stringify({ }),
-    success:function(data) {
-    //  console.log(JSON.stringify(data));
-  
-     for (var i=0 ; i<=data.data.length; i++) { 
-      doctorsName = data.data[i].doctor_name;
+
+    success:function (data) {
+
+
+      for (var i = 0; i <= data.data.length; i++) {
+        doctorsName = data.data[i].doctor_name;
         $('#doctortab').append(`<button class="btn m-1 doctorbutton" value='${doctorsName}'><h6 class="m-0">${doctorsName}</h6><p class="m-0"></button>`);
-      // console.log($(`.doctorbutton${i}`).attr('value'));
-    }
+
+      }
     },    
     error: function(data) {
         alert("Something went wrong please try again");
     }
+
 })
 
 //------------------------------doctor name API----------------------------------------------------------
@@ -83,16 +82,16 @@ $('.doctorslot')[0].addEventListener('click', function () {
 // }
 
 for (var l = 10; l >= 0; l--) {
-    let timearray = [];
-    timearray[l] = `<button class="btn timebtns m-1"><h6 class="m-0">Time Slot ${[l]}</h6><p class="m-0"></button>`;
-    timetab.html(timearray[l] += timetab.html());
+  let timearray = [];
+  timearray[l] = `<button class="btn timebtns m-1"><h6 class="m-0">Time Slot ${[l]}</h6><p class="m-0"></button>`;
+  timetab.html(timearray[l] += timetab.html());
 }
 
 
 for (var m = 10; m >= 0; m--) {
-    let timeslotarray = [];
-    timeslotarray[m] = `<button class="btn timeslotbtns m-1"><h6 class="m-0">Time Slot ${[m]}</h6><p class="m-0"></button>`;
-    timeslots.html(timeslotarray[m] += timeslots.html());
+  let timeslotarray = [];
+  timeslotarray[m] = `<button class="btn timeslotbtns m-1"><h6 class="m-0">Time Slot ${[m]}</h6><p class="m-0"></button>`;
+  timeslots.html(timeslotarray[m] += timeslots.html());
 }
 
 // $(document).ready( function(){
@@ -101,56 +100,56 @@ for (var m = 10; m >= 0; m--) {
 //     console.log(cardslot.html());
 //   })
 //   })
- 
+
 
 var specialityvalue = [
-    { id: 1, name: "Cardilogy" },
-    { id: 2, name: "Internal Medicine" },
-    { id: 12, name: "Child Health" },
-    { id: 22, name: "Rheumatology" },
-    { id: 23, name: "General Surgery" },
-    { id: 24, name: "Urology" },
-    { id: 25, name: "Endocrine" },
-    { id: 26, name: "Family Medicine" },
-    { id: 27, name: "Hemetology" },
-    { id: 28, name: "Psychiatry" },
-    { id: 29, name: "Men&#039;s Sexual Health" },
-    { id: 30, name: "Dermatology" },
-    { id: 31, name: "Digestive Diseases" },
-    { id: 32, name: "Respiratory Medicine" },
-    { id: 33, name: "Orthopedics" },
-    { id: 34, name: "Spine Surgeon" },
-    { id: 35, name: "Oncology" },
-    { id: 36, name: "Physiotherapy" },
-    { id: 37, name: "ENT, Head &amp; Neck" },
-    { id: 38, name: "Nephrology" },
-    { id: 39, name: "Women&#039;s health" },
-    { id: 40, name: "Nutrition &amp; Dietics" },
+  { id: 1, name: "Cardilogy" },
+  { id: 2, name: "Internal Medicine" },
+  { id: 12, name: "Child Health" },
+  { id: 22, name: "Rheumatology" },
+  { id: 23, name: "General Surgery" },
+  { id: 24, name: "Urology" },
+  { id: 25, name: "Endocrine" },
+  { id: 26, name: "Family Medicine" },
+  { id: 27, name: "Hemetology" },
+  { id: 28, name: "Psychiatry" },
+  { id: 29, name: "Men&#039;s Sexual Health" },
+  { id: 30, name: "Dermatology" },
+  { id: 31, name: "Digestive Diseases" },
+  { id: 32, name: "Respiratory Medicine" },
+  { id: 33, name: "Orthopedics" },
+  { id: 34, name: "Spine Surgeon" },
+  { id: 35, name: "Oncology" },
+  { id: 36, name: "Physiotherapy" },
+  { id: 37, name: "ENT, Head &amp; Neck" },
+  { id: 38, name: "Nephrology" },
+  { id: 39, name: "Women&#039;s health" },
+  { id: 40, name: "Nutrition &amp; Dietics" },
 ].reverse();
 
 for (var m = 0; m < specialityvalue.length; m++) {
-    specialityvalue[m] = `<button class="btn specialitybtns m-1"><h6 class="m-0">${specialityvalue[m].name} [${specialityvalue[m].id}]</h6><p class="m-0"></button>`;
-    specialitytab.html(specialityvalue[m] += specialitytab.html());
+  specialityvalue[m] = `<button class="btn specialitybtns m-1"><h6 class="m-0">${specialityvalue[m].name} [${specialityvalue[m].id}]</h6><p class="m-0"></button>`;
+  specialitytab.html(specialityvalue[m] += specialitytab.html());
 }
 
 
 function reset() {
-    window.reload();
+  window.reload();
 }
 
 function closeform() {
-    if ($('.patientinfosection').show()) {
-        $('.patientinfosection').hide();
-        $('.parentclose').hide();
-    }
-    if ($('.appointmentinfosection').show()) {
-        $('.appointmentinfosection').hide()
-        $('.parentclose').hide();
-    }
-    if ($('.doctorinfosection').show()) {
-        $('.doctorinfosection').hide()
-        $('.parentclose').hide();
-    }  
+  if ($('.patientinfosection').show()) {
+    $('.patientinfosection').hide();
+    $('.parentclose').hide();
+  }
+  if ($('.appointmentinfosection').show()) {
+    $('.appointmentinfosection').hide()
+    $('.parentclose').hide();
+  }
+  if ($('.doctorinfosection').show()) {
+    $('.doctorinfosection').hide()
+    $('.parentclose').hide();
+  }
 }
 
 
@@ -161,39 +160,39 @@ var fullDate = new Date()
 var currentDate = monthname + " " + fullDate.getDate() + "," + fullDate.getFullYear();
 calender.html(currentDate);
 
-$(document).ready(function() {
-    clockUpdate();
-    setInterval(clockUpdate, 1000);
-  })
-  
-  function clockUpdate() {
-    var date = new Date();
-    $('.digital-clock').css({'color': '#fff', 'text-shadow': '0 0 6px #ff0'});
-    function addZero(x) {
-      if (x < 10) {
-        return x = '0' + x;
-      } else {
-        return x;
-      }
-    }
-  
-    function twelveHour(x) {
-      if (x > 12) {
-        return x = x - 12;
-      } else if (x == 0) {
-        return x = 12;
-      } else {
-        return x;
-      }
-    }
-  
-    var h = addZero(twelveHour(date.getHours()));
-    var m = addZero(date.getMinutes());
-    var s = addZero(date.getSeconds());
+$(document).ready(function () {
+  clockUpdate();
+  setInterval(clockUpdate, 1000);
+})
 
-    $('#livetime').text(h + ':' + m + ':' + s);
-    
+function clockUpdate() {
+  var date = new Date();
+  $('.digital-clock').css({ 'color': '#fff', 'text-shadow': '0 0 6px #ff0' });
+  function addZero(x) {
+    if (x < 10) {
+      return x = '0' + x;
+    } else {
+      return x;
+    }
   }
+
+  function twelveHour(x) {
+    if (x > 12) {
+      return x = x - 12;
+    } else if (x == 0) {
+      return x = 12;
+    } else {
+      return x;
+    }
+  }
+
+  var h = addZero(twelveHour(date.getHours()));
+  var m = addZero(date.getMinutes());
+  var s = addZero(date.getSeconds());
+
+  $('#livetime').text(h + ':' + m + ':' + s);
+
+}
 
 
 //   $(document).on('input', function () {
@@ -201,52 +200,56 @@ $(document).ready(function() {
 // })
 
 var roomnumber = "";
-$('#clinicroom').on('change', function() {
-    roomnumber = this.value;
-    console.log(roomnumber);
-  });
+$('#clinicroom').on('change', function () {
+  roomnumber = this.value;
+  console.log(roomnumber);
+});
 
-$(document).on('click','.startbtn',function(){
+$(document).on('click', '.startbtn', function () {
   $(this).closest('.startbtn').attr('disabled', true);
   $(this).closest('.starttime').attr('disabled', true);
 })
 
 
- $(document).on('click','.closebtn',function(){
- $(this).closest('.card1').remove();
- })
+$(document).on('click', '.closebtn', function () {
+  $(this).closest('.card1').remove();
+})
 
 function onlyOne(checkbox) {
-    var checkboxes = document.getElementsByName('check')
-    checkboxes.forEach((item) => {
-        if (item !== checkbox) item.checked = false
-    })
+  var checkboxes = document.getElementsByName('check')
+  checkboxes.forEach((item) => {
+    if (item !== checkbox) item.checked = false
+  })
 }
 
 
- $('#livetime').on('click',function(){
+$('#livetime').on('click', function () {
   $(this).draggable();
- })
+})
 
- $('.selectpatient').on('input',function(){
+$('.selectpatient').on('input', function () {
   var selectpatientinput = this.value;
-if(isNaN(selectpatientinput) == false){
-  $('.patientnumber').attr('value',selectpatientinput);
-}else{
-  $('.patientname').attr('value',selectpatientinput);
-}
- })
+  if (isNaN(selectpatientinput) == false) {
+    $('.patientnumber').attr('value', selectpatientinput);
+  } else {
+    $('.patientname').attr('value', selectpatientinput);
+  }
+})
 
 
- function formshift(){
+function formshift() {
   $('.patientinfosection').show()
   $('.appointmentinfosection').hide();
- }
- function displayschedule(){
+}
+function displayschedule() {
   alert(this.value);
- }
+}
 
- $(document).on('click',`.doctorbutton`,function(){
-console.log($(this).attr('value'));
-$('#doctorscheduledata').show();
-  })
+$(document).on('click', `.doctorbutton`, function () {
+  console.log($(this).attr('value'));
+  $('#doctorscheduledata').show();
+})
+
+
+
+
